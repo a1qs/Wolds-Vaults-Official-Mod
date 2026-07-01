@@ -402,7 +402,6 @@
     "vaulthunters.fixes.MixinDiscoveredThemesData",
     "vaulthunters.fixes.MixinDynamicModelRegistry",
     "vaulthunters.fixes.MixinEliteZombie",
-    "vaulthunters.fixes.MixinEntityGroupsConfig",
     "vaulthunters.fixes.MixinFloatingItem",
     "vaulthunters.fixes.MixinImmortalityEffect",
     "vaulthunters.fixes.MixinIntegrationCurios",
