@@ -5,9 +5,6 @@ import cofh.core.init.CoreEnchantments;
 import cofh.ensorcellation.init.EnsorcEnchantments;
 import com.cursedcauldron.wildbackport.common.registry.WBEnchantments;
 import com.github.alexthe666.alexsmobs.enchantment.AMEnchantmentRegistry;
-import com.hollingsworth.arsnouveau.common.enchantment.EnchantmentRegistry;
-import com.hollingsworth.arsnouveau.setup.ItemsRegistry;
-import com.simibubi.create.AllEnchantments;
 import com.simibubi.create.Create;
 import de.castcrafter.travel_anchors.ModEnchantments;
 import iskallia.vault.init.ModItems;
@@ -68,11 +65,6 @@ public class ModGearEnchantmentsProvider extends AbstractGearEnchantmentProvider
         add("create", builder -> {
             builder.addEnchantment(ResourceLocation.fromNamespaceAndPath(Create.ID, "potato_recovery"), 5, 1);
             builder.addEnchantment(ResourceLocation.fromNamespaceAndPath(Create.ID, "capacity"), 5, 1);
-        });
-
-        add("ars_nouveau", builder -> {
-            builder.addEnchantment(EnchantmentRegistry.MANA_BOOST_ENCHANTMENT, List.of(new ItemStack(ItemsRegistry.SOURCE_GEM, 16)), 1);
-            builder.addEnchantment(EnchantmentRegistry.MANA_REGEN_ENCHANTMENT, List.of(new ItemStack(ItemsRegistry.SOURCE_GEM, 16)), 3);
         });
 
         add("travel_anchors", builder -> {

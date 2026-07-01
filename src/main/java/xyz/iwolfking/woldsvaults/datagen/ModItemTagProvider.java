@@ -1,10 +1,6 @@
 package xyz.iwolfking.woldsvaults.datagen;
-
-import com.hollingsworth.arsnouveau.common.lib.LibItemNames;
-import com.hollingsworth.arsnouveau.setup.ItemsRegistry;
 import iskallia.vault.item.BasicItem;
 import iskallia.vault.item.ItemVaultCrystalSeal;
-import iskallia.vault.tags.ModItemTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;

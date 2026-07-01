@@ -44,8 +44,6 @@
     "alexsmobs.MixinEntityCosmaw",
     "alexsmobs.MixinEntityTiger",
     "angelrings.MixinAbstractRingCurio",
-    "ars_nouveau.MixinISpellHotkeyListener",
-    "ars_nouveau.MixinReactiveEnchantment",
     "bettercombat.MixinBetterCombatAttackRange",
     "bettercombat.MixinRadialFilter",
     "bettercombat.MixinWeaponAttributesHelper",
