@@ -268,7 +268,6 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.OMEGA_BOX, "Omega Box");
         add(ModItems.CATALYST_BOX, "Catalyst Box");
         add(ModItems.ENIGMA_EGG, "Enigma Egg");
-        add(ModItems.DRYGMY_SPAWN_EGG, "Drygmy Spawn Egg");
         add("itemGroup.woldsvaults", "Wold's Vaults");
         add("item.woldsvaults.zephyr_charm", "Zephyr Charm");
         add("item.woldsvaults.augment_piece", "Augment Piece");

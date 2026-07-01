@@ -166,7 +166,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         spawnEgg(ModItems.MONSTER_EYE_EGG);
         spawnEgg(ModItems.ROBOT_EGG);
         spawnEgg(ModItems.WOLD_EGG);
-        spawnEgg(ModItems.DRYGMY_SPAWN_EGG);
 
         charm("idona_token");
         charm("tenos_token");
