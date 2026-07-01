@@ -1,6 +1,5 @@
 package xyz.iwolfking.woldsvaults.mixins.vaulthunters.compat.lightmanscurrency;
 
-import cofh.ensorcellation.init.EnsorcEnchantments;
 import io.github.lightman314.lightmanscurrency.common.items.WalletItem;
 import iskallia.vault.container.SpiritExtractorContainer;
 import iskallia.vault.gear.attribute.type.VaultGearAttributeTypeMerger;
@@ -27,6 +26,6 @@ public class MixinSpiritExtractor {
      */
     @Overwrite(remap = false)
     private static boolean shouldAddItem(ItemStack stack) {
-        return !stack.isEmpty() && (!AttributeGearData.hasData(stack) || !(Boolean) AttributeGearData.read(stack).get(ModGearAttributes.SOULBOUND, VaultGearAttributeTypeMerger.anyTrue()) && !(stack.getItem() instanceof WalletItem) && !(stack.getItem() instanceof TrinketPouchItem) && !(EnchantmentHelper.getEnchantments(stack).containsKey(EnsorcEnchantments.SOULBOUND.get())));
+        return !stack.isEmpty() && (!AttributeGearData.hasData(stack) || !(Boolean) AttributeGearData.read(stack).get(ModGearAttributes.SOULBOUND, VaultGearAttributeTypeMerger.anyTrue()) && !(stack.getItem() instanceof WalletItem) && !(stack.getItem() instanceof TrinketPouchItem));
     }
 }

@@ -1,6 +1,5 @@
 package xyz.iwolfking.woldsvaults.items.gear;
 
-import cofh.ensorcellation.init.EnsorcEnchantments;
 import com.google.common.collect.Multimap;
 import iskallia.vault.dynamodel.DynamicModel;
 import iskallia.vault.gear.VaultGearClassification;
@@ -17,7 +16,6 @@ import iskallia.vault.item.BasicItem;
 import iskallia.vault.snapshot.AttributeSnapshot;
 import iskallia.vault.snapshot.AttributeSnapshotHelper;
 import iskallia.vault.util.SidedHelper;
-import iskallia.vault.util.damage.AttackScaleHelper;
 import iskallia.vault.world.data.DiscoveredModelsData;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.NonNullList;
@@ -54,11 +52,7 @@ import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import org.jetbrains.annotations.NotNull;
 import vazkii.quark.base.handler.QuarkSounds;
-import xyz.iwolfking.woldsvaults.WoldsVaults;
-import xyz.iwolfking.woldsvaults.api.data.enchantments.AllowedEnchantmentsData;
-import xyz.iwolfking.woldsvaults.init.ModItems;
 import xyz.iwolfking.woldsvaults.items.gear.rang.VaultRangEntity;
-import xyz.iwolfking.woldsvaults.items.gear.rang.VaultRangLogic;
 import xyz.iwolfking.woldsvaults.models.Rangs;
 
 import javax.annotation.Nonnull;
@@ -301,10 +295,7 @@ public class VaultRangItem extends BasicItem implements VaultGearItem, DyeableLe
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        if(enchantment.equals(Enchantments.UNBREAKING) || enchantment.equals(Enchantments.MOB_LOOTING) || enchantment.equals(EnsorcEnchantments.SOULBOUND.get())) {
-            return true;
-        }
-        if(AllowedEnchantmentsData.isAllowedUtilityEnchantment(enchantment)) {
+        if(enchantment.equals(Enchantments.UNBREAKING) || enchantment.equals(Enchantments.MOB_LOOTING)) {
             return true;
         }
         else {

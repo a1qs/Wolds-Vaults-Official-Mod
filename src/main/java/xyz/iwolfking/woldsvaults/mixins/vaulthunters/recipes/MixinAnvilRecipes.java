@@ -14,9 +14,7 @@ import xyz.iwolfking.woldsvaults.recipes.crystal.LayoutModificationRecipe;
 import xyz.iwolfking.woldsvaults.recipes.crystal.MapModificationRecipe;
 import xyz.iwolfking.woldsvaults.recipes.gear.AdaptiveFocusUniqueGearRecipe;
 import xyz.iwolfking.woldsvaults.recipes.gear.GearRepairAdderRecipe;
-import xyz.iwolfking.woldsvaults.recipes.gear.MercyEnchantmentAdderRecipe;
 import xyz.iwolfking.woldsvaults.recipes.gear.SetWeaponTypeFocusRecipe;
-import xyz.iwolfking.woldsvaults.recipes.misc.SoulboundEnchantmentRecipe;
 import xyz.iwolfking.woldsvaults.recipes.tool.OmegaToolCapacityAdderRecipe;
 import xyz.iwolfking.woldsvaults.recipes.tool.ToolCapacityAdderRecipe;
 import xyz.iwolfking.woldsvaults.recipes.tool.ToolModifierNullifierRecipe;
@@ -45,13 +43,11 @@ public abstract class MixinAnvilRecipes {
         woldsVaults$register(new OmegaToolCapacityAdderRecipe());
         woldsVaults$register(new ToolModifierNullifierRecipe());
         woldsVaults$register(new ToolStylishAdderRecipe());
-        woldsVaults$register(new MercyEnchantmentAdderRecipe());
         woldsVaults$register(new LayoutModificationRecipe());
         woldsVaults$register(new SetWeaponTypeFocusRecipe());
         woldsVaults$register(new MapModificationRecipe());
         woldsVaults$register(new ConcealedChaosModificationRecipe());
         woldsVaults$register(new AdaptiveFocusUniqueGearRecipe());
-        woldsVaults$register(new SoulboundEnchantmentRecipe());
     }
 
     @Unique

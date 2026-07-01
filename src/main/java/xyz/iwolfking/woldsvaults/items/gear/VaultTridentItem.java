@@ -59,7 +59,6 @@ import net.minecraftforge.fml.loading.LoadingModList;
 import net.minecraftforge.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import xyz.iwolfking.woldsvaults.integration.bettertridents.BetterThrownTrident;
-import xyz.iwolfking.woldsvaults.api.data.enchantments.AllowedEnchantmentsData;
 import xyz.iwolfking.woldsvaults.init.ModItems;
 import xyz.iwolfking.woldsvaults.models.Tridents;
 
@@ -127,7 +126,7 @@ public class VaultTridentItem extends TridentItem implements VaultGearItem, Dyea
         if (enchantment.equals(Enchantments.LOYALTY) || enchantment.equals(Enchantments.RIPTIDE) ||
             enchantment.equals(Enchantments.CHANNELING)) {
             return false;
-        } else if (enchantment.equals(Enchantments.MOB_LOOTING) || AllowedEnchantmentsData.isAllowedUtilityEnchantment(enchantment)) {
+        } else if (enchantment.equals(Enchantments.MOB_LOOTING)) {
             return true;
         } else {
             return super.canApplyAtEnchantingTable(stack, enchantment);

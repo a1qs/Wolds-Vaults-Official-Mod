@@ -1,6 +1,5 @@
 package xyz.iwolfking.woldsvaults.mixins.vaulthunters.compat.lightmanscurrency;
 
-import cofh.ensorcellation.init.EnsorcEnchantments;
 import io.github.lightman314.lightmanscurrency.common.items.WalletItem;
 import iskallia.vault.gear.attribute.type.VaultGearAttributeTypeMerger;
 import iskallia.vault.gear.data.AttributeGearData;
@@ -28,6 +27,6 @@ public class MixinSoulboundSnapshot {
      */
     @Overwrite(remap = false)
     protected boolean shouldSnapshotItem(Player player, ItemStack stack) {
-        return !stack.isEmpty() && (stack.hasTag() && !stack.getTag().getBoolean("VaultRoyaleLootable")) && (AttributeGearData.read(stack).get(ModGearAttributes.SOULBOUND, VaultGearAttributeTypeMerger.anyTrue()) || stack.getItem() instanceof WalletItem || (stack.getItem() instanceof TrinketPouchItem && !TrinketPouchItem.isTemporary(stack)) || EnchantmentHelper.getEnchantments(stack).containsKey(EnsorcEnchantments.SOULBOUND.get()));
+        return !stack.isEmpty() && (stack.hasTag() && !stack.getTag().getBoolean("VaultRoyaleLootable")) && (AttributeGearData.read(stack).get(ModGearAttributes.SOULBOUND, VaultGearAttributeTypeMerger.anyTrue()) || stack.getItem() instanceof WalletItem || (stack.getItem() instanceof TrinketPouchItem && !TrinketPouchItem.isTemporary(stack)));
     }
 }

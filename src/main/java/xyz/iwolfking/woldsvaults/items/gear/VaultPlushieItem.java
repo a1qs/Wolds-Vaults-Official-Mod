@@ -34,7 +34,6 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
-import xyz.iwolfking.woldsvaults.api.data.enchantments.AllowedEnchantmentsData;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -138,10 +137,6 @@ public class VaultPlushieItem extends BasicItem implements VaultGearItem {
 
     @Override
     public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
-        if(AllowedEnchantmentsData.isAllowedUtilityEnchantment(enchantment)) {
-            return true;
-        }
-
         return super.canApplyAtEnchantingTable(stack, enchantment);
     }
 }

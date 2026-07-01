@@ -1,6 +1,5 @@
 package xyz.iwolfking.woldsvaults.recipes.gear;
 
-import cofh.ensorcellation.init.EnsorcEnchantments;
 import iskallia.vault.gear.data.VaultGearData;
 import iskallia.vault.gear.item.IdentifiableItem;
 import iskallia.vault.gear.item.VaultGearItem;
@@ -12,15 +11,12 @@ import mezz.jei.api.recipe.vanilla.IVanillaRecipeFactory;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import xyz.iwolfking.woldsvaults.init.ModItems;
 import xyz.iwolfking.woldsvaults.items.gear.VaultMapItem;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class GearRepairAdderRecipe extends VanillaAnvilRecipe {
     @Override

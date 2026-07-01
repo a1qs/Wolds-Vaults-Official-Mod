@@ -2,7 +2,6 @@ package xyz.iwolfking.woldsvaults.datagen;
 
 import iskallia.vault.VaultMod;
 import iskallia.vault.config.ResearchesGUIConfig;
-import iskallia.vault.gear.trinket.TrinketEffectRegistry;
 import iskallia.vault.init.ModConfigs;
 import me.dinnerbeef.compressium.Compressium;
 import net.minecraft.data.DataGenerator;
@@ -36,14 +35,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ARCANE_SHARD);
         simpleItem(ModItems.AUGMENT_PIECE);
         simpleItem(ModItems.ARCANE_ESSENCE);
-        simpleItem(ModItems.BLACK_CHROMATIC_STEEL_ANGEL_RING);
         simpleItem(ModItems.BLAZING_FOCUS);
         simpleItem(ModItems.CATALYST_BOX);
         simpleItem(ModItems.CHISELING_FOCUS);
         simpleItem(ModItems.CHROMA_CORE);
-        simpleItem(ModItems.CHROMATIC_GOLD_ANGEL_RING);
-        simpleItem(ModItems.CHROMATIC_IRON_ANGEL_RING);
-        simpleItem(ModItems.CHROMATIC_STEEL_ANGEL_RING);
         simpleItem(ModItems.CHUNK_OF_POWER);
         simpleItem(ModItems.DUST_OF_POWER);
         simpleItem(ModItems.COMMUNITY_TOKEN);
@@ -88,7 +83,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.POG_PRISM);
         simpleItem(ModItems.POGOMINIUM_INGOT);
         simpleItem(ModItems.POLTERGEIST_PLUM);
-        simpleItem(ModItems.PRISMATIC_ANGEL_RING);
         simpleItem(ModItems.PRISMATIC_FIBER);
         simpleItem(ModItems.RECIPE_BLUEPRINT);
         simpleItem(ModItems.REPAIR_AUGMENTER);
