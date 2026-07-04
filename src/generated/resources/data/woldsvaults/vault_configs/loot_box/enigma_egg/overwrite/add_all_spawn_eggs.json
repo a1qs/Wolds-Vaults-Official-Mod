@@ -602,46 +602,6 @@
     },
     {
       "value": {
-        "id": "ars_nouveau:starbuncle_se",
-        "amountMin": 1,
-        "amountMax": 1
-      },
-      "weight": 1
-    },
-    {
-      "value": {
-        "id": "ars_nouveau:whirlisprig_se",
-        "amountMin": 1,
-        "amountMax": 1
-      },
-      "weight": 1
-    },
-    {
-      "value": {
-        "id": "ars_nouveau:wilden_guardian_se",
-        "amountMin": 1,
-        "amountMax": 1
-      },
-      "weight": 1
-    },
-    {
-      "value": {
-        "id": "ars_nouveau:wilden_hunter_se",
-        "amountMin": 1,
-        "amountMax": 1
-      },
-      "weight": 1
-    },
-    {
-      "value": {
-        "id": "ars_nouveau:wilden_stalker_se",
-        "amountMin": 1,
-        "amountMax": 1
-      },
-      "weight": 1
-    },
-    {
-      "value": {
         "id": "auxiliaryblocks:gingerbread_man_giant_spawn_egg",
         "amountMin": 1,
         "amountMax": 1
@@ -2427,14 +2387,6 @@
     {
       "value": {
         "id": "woldsvaults:boogieman_spawn_egg",
-        "amountMin": 1,
-        "amountMax": 1
-      },
-      "weight": 1
-    },
-    {
-      "value": {
-        "id": "woldsvaults:drygmy_spawn_egg",
         "amountMin": 1,
         "amountMax": 1
       },

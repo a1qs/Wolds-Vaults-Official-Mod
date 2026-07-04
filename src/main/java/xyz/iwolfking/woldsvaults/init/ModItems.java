@@ -26,6 +26,7 @@ import xyz.iwolfking.woldsvaults.items.fruits.HastyPomegranteItem;
 import xyz.iwolfking.woldsvaults.items.fruits.PoltergeistPlum;
 import xyz.iwolfking.woldsvaults.items.fruits.WisdomFruitItem;
 import xyz.iwolfking.woldsvaults.items.gear.*;
+import xyz.iwolfking.woldsvaults.items.world.PowerShardItem;
 
 import java.util.*;
 
@@ -219,6 +220,7 @@ public class ModItems {
 
     public static ConfigurableFloatingTextBlockItem CONFIGURABLE_FLOATING_TEXT;
     public static TimeTrialTrophyItem TIME_TRIAL_TROPHY;
+    public static PowerShardItem POWER_SHARD;
 
     //Buckets
     public static BucketItem PRISMATIC_GLUE_BUCKET = (BucketItem) new BucketItem(ModFluids.PRISMATIC_GLUE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(ModCreativeTabs.WOLDS_VAULTS)).setRegistryName(WoldsVaults.id("prismatic_glue_bucket"));
@@ -374,6 +376,7 @@ public class ModItems {
             registry.register(bi);
         });
         registry.register(RAINBOW_UNOBTANIUM);
+        registry.register(POWER_SHARD);
 
     }
 
@@ -546,5 +549,7 @@ public class ModItems {
         SCAVENGER_POUCH_ITEM = new ItemScavengerPouch(WoldsVaults.id("scavenger_pouch"));
         GREED_TREE_RESET_ITEM = new GreedTreeResetItem(WoldsVaults.id("greed_neuralizer"));
         CONCEALED_CHAOS = new ConcealedChaosItem(WoldsVaults.id("concealed_chaos"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
+
+        POWER_SHARD = new PowerShardItem(WoldsVaults.id("power_shard"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS), 5.0);
     }
 }

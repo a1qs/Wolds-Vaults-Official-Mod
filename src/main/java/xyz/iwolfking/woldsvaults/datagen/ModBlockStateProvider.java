@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.*;
 import net.minecraftforge.client.model.generators.loaders.MultiLayerModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackBlock;
 import xyz.iwolfking.vhapi.api.util.ResourceLocUtils;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
@@ -56,6 +57,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         generateGenericItemModelBlockState(ModBlocks.ETCHING_PEDESTAL);
         generateGenericItemModelBlockState(ModBlocks.GOD_VENDOR_PEDESTAL);
         generateGenericItemModelBlockState(ModBlocks.BREWING_ALTAR);
+        generateGenericItemModelBlockState(ModBlocks.WORLD_EXPANDER_BLOCK);
         generateGenericItemModelBlockState(ModBlocks.SURVIVAL_OBJECTIVE_BLOCK);
         horizontalBlock(ModBlocks.GRAVEYARD_LOOT_BLOCK, new ModelFile.ExistingModelFile(
                 modLoc("block/tombstone"), models().existingFileHelper));

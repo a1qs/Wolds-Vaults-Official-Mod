@@ -91,6 +91,7 @@ public class ModBlockLootTables implements Consumer<BiConsumer<ResourceLocation,
         add(ModBlocks.OMEGA_VENDOR_PEDESTAL, noDrop());
         add(ModBlocks.SPOOKY_VENDOR_PEDESTAL, noDrop());
         add(ModBlocks.CARD_VENDOR_PEDESTAL, noDrop());
+        add(ModBlocks.WORLD_EXPANDER_BLOCK, noDrop());
         add(ModBlocks.XL_BACKPACK, LootTable.lootTable().withPool(LootPool.lootPool().name("main").setRolls(ConstantValue.exactly(1)).add(LootItem.lootTableItem(ModItems.XL_BACKPACK))).apply(new CopyBackpackDataFunction.Builder()));
         dropWhenSilkTouch(ModBlocks.ISKALLIAN_LEAVES_BLOCK);
         dropWhenSilkTouch(ModBlocks.HELLISH_SAND_BLOCK);

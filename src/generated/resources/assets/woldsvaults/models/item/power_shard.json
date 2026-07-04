@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "woldsvaults:item/chromatic_steel_angel_ring"
+    "layer0": "woldsvaults:item/power_shard"
   }
 }

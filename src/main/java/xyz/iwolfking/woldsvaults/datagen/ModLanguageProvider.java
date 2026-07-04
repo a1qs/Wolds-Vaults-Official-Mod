@@ -578,7 +578,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.IDONA_LIGHT_SMOOTH_BRICKS_STAIRS, "Idona Light Smooth Bricks Stairs");
         add(ModBlocks.IDONA_GEM_BLOCK_STAIRS, "Idona Gem Block Stairs");
         add(ModBlocks.IDONA_GEM_BLOCK_SLAB, "Idona Gem Block Slab");
-
+        add(ModBlocks.WORLD_EXPANDER_BLOCK, "World Expander");
+        add(ModItems.POWER_SHARD, "Power Shard");
 
 
         ModItems.COLORED_UNOBTANIUMS.forEach(((dyeColor, basicItem) -> {
