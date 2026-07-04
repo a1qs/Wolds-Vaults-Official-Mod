@@ -32,6 +32,7 @@ import net.minecraftforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
+import xyz.iwolfking.woldsvaults.api.data.level.WorldExpansionData;
 import xyz.iwolfking.woldsvaults.api.util.ComponentUtils;
 import xyz.iwolfking.woldsvaults.blocks.tiles.WorldExpanderTileEntity;
 import xyz.iwolfking.woldsvaults.init.ModBlocks;
@@ -89,6 +90,8 @@ public class WorldExpanderBlock extends BaseEntityBlock {
             if (expanderEntity.getLevel() == null) return InteractionResult.PASS;
             if (expanderEntity.shouldAnimate()) return InteractionResult.PASS;
 
+            WorldExpansionData data = WorldExpansionData.get(srv);
+
             double powerCrystalIncrease = shardMain.getIncrease();
             int handCount = pPlayer.getMainHandItem().getCount();
 
@@ -108,10 +111,12 @@ public class WorldExpanderBlock extends BaseEntityBlock {
 
             expanderEntity.setBroadcastMessage(pPlayer.getDisplayName().getString(), powerCrystalIncrease * handCount);
 
+
             if (!pPlayer.getAbilities().instabuild) {
                 pPlayer.getMainHandItem().setCount(0);
             }
 
+            data.addContribution(pPlayer.getUUID(), handCount);
             expanderEntity.getLevel().playSound(null, pPos, SoundEvents.BEACON_POWER_SELECT, SoundSource.BLOCKS, 0.75F, 0.9F);
 
             expanderEntity.resetSpinTime();
