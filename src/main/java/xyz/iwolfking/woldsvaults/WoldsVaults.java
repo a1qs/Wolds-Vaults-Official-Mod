@@ -34,6 +34,7 @@ import xyz.iwolfking.vhapi.api.registry.gear.CustomVaultGearRegistryEntry;
 import xyz.iwolfking.vhapi.api.registry.objective.CustomObjectiveRegistryEntry;
 import xyz.iwolfking.vhapi.api.util.ResourceLocUtils;
 import xyz.iwolfking.woldsvaults.api.core.competition.PlayerRewardStorage;
+import xyz.iwolfking.woldsvaults.api.data.level.PersonalLevelCapData;
 import xyz.iwolfking.woldsvaults.api.util.DelayedExecutionHelper;
 import xyz.iwolfking.woldsvaults.events.*;
 import xyz.iwolfking.woldsvaults.integration.cctweaked.CCTweakedSetup;
@@ -147,6 +148,8 @@ public class WoldsVaults {
         DiscoveredRecipesData.get(((ServerPlayer) event.getPlayer()).getLevel()).syncTo((ServerPlayer) event.getPlayer());
         PlayerGreedData greedData = PlayerGreedData.get(((ServerPlayer) event.getPlayer()).server);
         ((PlayerGreedDataExtension)greedData).syncTo((ServerPlayer) event.getPlayer());
+
+        PersonalLevelCapData.get(((ServerPlayer)event.getPlayer()).getLevel()).syncTo((ServerPlayer) event.getPlayer());
 
         if(PlayerRewardStorage.get(event.getPlayer().getServer()).hasRewards(event.getPlayer().getUUID())) {
             event.getPlayer().displayClientMessage(new TranslatableComponent("rewards.woldsvaults.unclaimed_rewards"), false);

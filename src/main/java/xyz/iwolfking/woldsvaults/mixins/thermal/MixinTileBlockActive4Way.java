@@ -14,7 +14,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
-import vazkii.botania.common.block.tile.TileCraftCrate;
 import xyz.iwolfking.woldsvaults.api.lib.IPlayerOwnedBlock;
 
 import java.util.function.Supplier;

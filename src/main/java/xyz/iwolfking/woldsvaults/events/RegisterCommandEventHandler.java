@@ -12,5 +12,6 @@ public class RegisterCommandEventHandler {
         TimeTrialCommand.register(event.getDispatcher());
         TriggerVaultEventCommand.register(event.getDispatcher());
         ResearchMenuCommand.register(event.getDispatcher());
+        PersonalLevelCapCommand.register(event.getDispatcher());
     }
 }

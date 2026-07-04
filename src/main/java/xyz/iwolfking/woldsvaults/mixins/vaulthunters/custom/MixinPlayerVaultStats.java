@@ -11,16 +11,20 @@ import iskallia.vault.skill.base.Skill;
 import iskallia.vault.skill.expertise.type.ExperiencedExpertise;
 import iskallia.vault.skill.tree.ExpertiseTree;
 import iskallia.vault.world.data.PlayerExpertisesData;
+import iskallia.vault.world.data.PlayerVaultStatsData;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
 import xyz.iwolfking.woldsvaults.api.data.discovery.DiscoveredRecipesData;
+import xyz.iwolfking.woldsvaults.api.data.level.ClientPersonalLevelCapData;
+import xyz.iwolfking.woldsvaults.api.data.level.PersonalLevelCapData;
 import xyz.iwolfking.woldsvaults.integration.ftbquests.tasks.VaultLevelTask;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -61,6 +65,10 @@ public abstract class MixinPlayerVaultStats {
         woldsVaults$vaultLevelTaskProgress(player, this.vaultLevel);
     }
 
+    @ModifyVariable(method = "addVaultExp", at = @At("STORE"), name = "effectiveCap")
+    private int includePlayerCap(int effectiveCap, MinecraftServer srv) {
+        return Math.min(effectiveCap, PersonalLevelCapData.get(srv).getPersonalCap(uuid));
+    }
 
     @Unique
     private List<VaultLevelTask> woldsVaults$levelTasks = null;
