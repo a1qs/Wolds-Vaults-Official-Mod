@@ -431,6 +431,7 @@
     "vaulthunters.objectives.MixinCrystalData",
     "vaulthunters.objectives.MixinNullCrystalModel",
     "vaulthunters.objectives.MixinScavengerObjective",
+    "vaulthunters.optimizations.MixinSetupEvents",
     "vaulthunters.optimizations.MixinTieredSkill",
     "vaulthunters.performance.MixinGearStackingTalent",
     "vaulthunters.performance.MixinHighHealthGearAttributeTalent",
