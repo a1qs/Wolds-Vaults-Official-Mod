@@ -48,6 +48,7 @@ public class ModBlocks {
     public static final TrinketFusionBlock TRINKET_FUSION_BLOCK;
     public static final OwnedCraftingTableBlock OWNED_CRAFTING_TABLE_BLOCK;
     public static final WorldExpanderBlock WORLD_EXPANDER_BLOCK;
+    public static final StatisticsBlock STATISTICS_BLOCK;
 
     public static final BrewingAltar BREWING_ALTAR;
     public static final SurvivalObjectiveBlock SURVIVAL_OBJECTIVE_BLOCK;
@@ -88,6 +89,7 @@ public class ModBlocks {
     public static final BlockEntityType<CrateCrackerTileEntity> CRATE_CRACKER_TILE_ENTITY_BLOCK_ENTITY_TYPE;
     public static final BlockEntityType<OwnedCraftingTableTileEntity> OWNED_CRAFTING_TABLE_TILE_ENTITY_BLOCK_ENTITY_TYPE;
     public static final BlockEntityType<WorldExpanderTileEntity> WORLD_EXPANDER_TILE_ENTITY;
+    public static final BlockEntityType<StatisticsTileEntity> STATISTICS_TILE_ENTITY;
 
     //Workstations
     public static final AugmentCraftingTableBlock AUGMENT_CRAFTING_TABLE;
@@ -250,6 +252,7 @@ public class ModBlocks {
         SURVIVAL_OBJECTIVE_BLOCK = new SurvivalObjectiveBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK));
         OWNED_CRAFTING_TABLE_BLOCK = new OwnedCraftingTableBlock(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE));
         WORLD_EXPANDER_BLOCK = new WorldExpanderBlock(BlockBehaviour.Properties.of(Material.METAL).strength(-1, 3.6E8F).noOcclusion());
+        STATISTICS_BLOCK = new StatisticsBlock(BlockBehaviour.Properties.of(Material.BARRIER).strength(4.0F, 3.6E8F).noDrops().noOcclusion().noCollission());
         WUTODIE_SLAB = new VaultGemSlabBlock(ModItems.WUTODIE_GEM);
         WUTODIE_WALL = new VaultGemWallBlock(ModItems.WUTODIE_GEM);
         WUTODIE_STAIRS = new VaultGemStairsBlock(ModItems.WUTODIE_GEM);
@@ -285,6 +288,7 @@ public class ModBlocks {
         TRINKET_FUSION_FORGE_TILE_ENTITY_BLOCK_ENTITY_TYPE = BlockEntityType.Builder.of(TrinketFusionForgeTileEntity::new, new Block[]{TRINKET_FUSION_BLOCK}).build(null);
         OWNED_CRAFTING_TABLE_TILE_ENTITY_BLOCK_ENTITY_TYPE = BlockEntityType.Builder.of(OwnedCraftingTableTileEntity::new, new Block[]{OWNED_CRAFTING_TABLE_BLOCK}).build(null);
         WORLD_EXPANDER_TILE_ENTITY = BlockEntityType.Builder.of(WorldExpanderTileEntity::new, WORLD_EXPANDER_BLOCK).build(null);
+        STATISTICS_TILE_ENTITY = BlockEntityType.Builder.of(StatisticsTileEntity::new, STATISTICS_BLOCK).build(null);
         for(DyeColor color : DyeColor.values()) {
             Block dyedUnobtanium = new Block(BlockBehaviour.Properties.of(Material.HEAVY_METAL, color).strength(50F).requiresCorrectToolForDrops());
             COLORED_UNOBTANIUMS.put(color, dyedUnobtanium);
@@ -407,6 +411,7 @@ public class ModBlocks {
         registerBlock(event, TIME_TRIAL_TROPHY_BLOCK, WoldsVaults.id("time_trial_trophy"));
         registerBlock(event, OWNED_CRAFTING_TABLE_BLOCK, WoldsVaults.id("owned_crafting_table"));
         registerBlock(event, WORLD_EXPANDER_BLOCK, WoldsVaults.id("world_expander"));
+        registerBlock(event, STATISTICS_BLOCK, WoldsVaults.id("statistics_block"));
         COLORED_UNOBTANIUMS.forEach(((dyeColor, block) -> {
             registerBlock(event, block, WoldsVaults.id(dyeColor.getSerializedName() + "_unobtanium_block"));
         }));
@@ -493,6 +498,7 @@ public class ModBlocks {
         registerTileEntity(event, TRINKET_FUSION_FORGE_TILE_ENTITY_BLOCK_ENTITY_TYPE, WoldsVaults.id("trinket_fusion_forge_tile_entity"));
         registerTileEntity(event, OWNED_CRAFTING_TABLE_TILE_ENTITY_BLOCK_ENTITY_TYPE, WoldsVaults.id("owned_crafting_table_tile_entity"));
         registerTileEntity(event, WORLD_EXPANDER_TILE_ENTITY, WoldsVaults.id("world_expander_tile_entity"));
+        registerTileEntity(event, STATISTICS_TILE_ENTITY, WoldsVaults.id("statistics_tile_entity"));
     }
 
     public static void registerBlockItems(RegistryEvent.Register<Item> event) {
@@ -547,6 +553,7 @@ public class ModBlocks {
         registerBlockItem(event, CRATE_CRACKER_BLOCK, 64, properties -> properties.tab(ModCreativeTabs.WOLDS_VAULTS));
         registerBlockItem(event, OWNED_CRAFTING_TABLE_BLOCK, 64, properties -> properties.tab(ModCreativeTabs.WOLDS_VAULTS));
         registerBlockItem(event, WORLD_EXPANDER_BLOCK, 64, properties -> properties.tab(ModCreativeTabs.WOLDS_VAULTS));
+        registerBlockItem(event, STATISTICS_BLOCK, 64, properties -> properties.tab(ModCreativeTabs.WOLDS_VAULTS));
         registerBlockItem(event, CONFIGURABLE_FLOATING_TEXT_BLOCK, xyz.iwolfking.woldsvaults.init.ModItems.CONFIGURABLE_FLOATING_TEXT);
         registerBlockItem(event, TIME_TRIAL_TROPHY_BLOCK, xyz.iwolfking.woldsvaults.init.ModItems.TIME_TRIAL_TROPHY);
         COLORED_UNOBTANIUMS.forEach(((dyeColor, block) -> {
@@ -618,6 +625,7 @@ public class ModBlocks {
         event.registerBlockEntityRenderer(CONFIGURABLE_FLOATING_TEXT_TILE_ENTITY, ConfigurableFloatingTextRenderer::new);
         event.registerBlockEntityRenderer(CRATE_CRACKER_TILE_ENTITY_BLOCK_ENTITY_TYPE, CrateCrackerRenderer::new);
         event.registerBlockEntityRenderer(WORLD_EXPANDER_TILE_ENTITY, WorldExpanderRenderer::new);
+        event.registerBlockEntityRenderer(STATISTICS_TILE_ENTITY, StatisticsTileRenderer::new);
     }
 
 
