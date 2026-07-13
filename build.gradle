@@ -479,3 +479,32 @@ tasks.jarJar.finalizedBy(tasks.deleteSlimJar)
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+
+tasks.register('copyMostRecentFile') {
+    doLast {
+        def sourceDir = file('build/libs')
+        def destDir1 = file(System.getenv('APPDATA') + '\\PrismLauncher\\instances\\ITS MY VAULTS NOW\\minecraft\\mods')
+        def destDir2 = file('C:\\Dev\\alyxs-vaults\\mods')
+
+        // Find the most recent file
+        def mostRecentFile = sourceDir.listFiles().max { it.lastModified() }
+
+        if (mostRecentFile) {
+            copy {
+                from mostRecentFile
+                into destDir1
+            }
+            copy {
+                from mostRecentFile
+                into destDir2
+            }
+            println "Copied ${mostRecentFile.name} to ${destDir1}"
+            println "Copied ${mostRecentFile.name} to ${destDir2}"
+        } else {
+            println "No files found in ${sourceDir}"
+        }
+    }
+}
+
+// Ensure the task runs after the build
+tasks.jar.finalizedBy(tasks.copyMostRecentFile)
