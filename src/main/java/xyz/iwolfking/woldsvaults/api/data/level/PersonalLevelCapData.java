@@ -109,7 +109,7 @@ public class PersonalLevelCapData extends SavedData {
     }
 
     private static int computeCost(int currentCap) {
-        return Math.max(1, (int) Math.round(0.8 * Math.pow(Math.E, 0.026 * currentCap))); // god is dead.
+        return Math.max(1, (int) Math.round(0.08 * Math.pow(Math.E, 0.06 * currentCap) + 1)); // god is dead.
     }
 
 
