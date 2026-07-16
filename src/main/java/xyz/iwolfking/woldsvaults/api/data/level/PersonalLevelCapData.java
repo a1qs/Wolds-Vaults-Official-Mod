@@ -47,7 +47,7 @@ public class PersonalLevelCapData extends SavedData {
 
     public void load(CompoundTag pCompoundTag) {
         this.playerCap.clear();
-        ListTag data = pCompoundTag.getList("data", Tag.TAG_LIST);
+        ListTag data = pCompoundTag.getList("data", Tag.TAG_COMPOUND);
 
         for (int i = 0; i < data.size(); i++) {
             CompoundTag levelCapData = data.getCompound(i);
