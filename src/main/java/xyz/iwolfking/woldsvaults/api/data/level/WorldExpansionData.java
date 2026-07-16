@@ -12,6 +12,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.saveddata.SavedData;
 import net.minecraftforge.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
+import xyz.iwolfking.woldsvaults.init.ModNetwork;
+import xyz.iwolfking.woldsvaults.network.message.S2CSyncGlobalCap;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -82,10 +84,13 @@ public class WorldExpansionData extends SavedData {
         boolean changed = processLevelCap();
         if (changed) {
             MinecraftServer srv = ServerLifecycleHooks.getCurrentServer();
+            int level = srv.getGameRules().getRule(ModGameRules.LEVEL_LOCK).get();
             srv.getPlayerList().broadcastMessage(
-                    new TextComponent("> The Level Cap has been increased to ").withStyle(ChatFormatting.YELLOW).append(new TextComponent("Level " + srv.getGameRules().getRule(ModGameRules.LEVEL_LOCK).get()))
+                    new TextComponent("> The Level Cap has been increased to ").withStyle(ChatFormatting.YELLOW).append(new TextComponent("Level " + level))
+                    , ChatType.CHAT, Util.NIL_UUID
+            );
 
-                    , ChatType.CHAT, Util.NIL_UUID);
+            ModNetwork.sendToAllClients(new S2CSyncGlobalCap(level));
         }
     }
 
