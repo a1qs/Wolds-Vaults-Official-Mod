@@ -430,6 +430,7 @@
     "vaulthunters.objectives.MixinArchitectObjective",
     "vaulthunters.objectives.MixinCrystalData",
     "vaulthunters.objectives.MixinNullCrystalModel",
+    "vaulthunters.objectives.MixinScavengerBingoObjective",
     "vaulthunters.objectives.MixinScavengerObjective",
     "vaulthunters.optimizations.MixinSetupEvents",
     "vaulthunters.optimizations.MixinTieredSkill",
