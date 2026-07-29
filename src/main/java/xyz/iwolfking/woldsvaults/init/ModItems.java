@@ -18,7 +18,6 @@ import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
 import xyz.iwolfking.vhapi.api.util.ConditionalModUtils;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
 import xyz.iwolfking.woldsvaults.api.lib.item.MultiLootableItem;
-import xyz.iwolfking.woldsvaults.integration.occultism.init.ModRitualDummyItems;
 import xyz.iwolfking.woldsvaults.items.*;
 import xyz.iwolfking.woldsvaults.items.alchemy.CatalystItem;
 import xyz.iwolfking.woldsvaults.items.alchemy.DecoPotionItem;
@@ -393,10 +392,6 @@ public class ModItems {
         registry.register(RAINBOW_UNOBTANIUM);
         registry.register(POWER_SHARD);
 
-        //Mod dependent loading
-        if(ConditionalModUtils.isModPresent("occultism")) {
-            ModRitualDummyItems.registerItems(event);
-        }
     }
 
     static {
