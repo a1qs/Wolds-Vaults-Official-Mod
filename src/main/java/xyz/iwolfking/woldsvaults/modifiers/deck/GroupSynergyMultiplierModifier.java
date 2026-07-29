@@ -9,6 +9,7 @@ import iskallia.vault.core.data.adapter.Adapters;
 import iskallia.vault.core.net.BitBuffer;
 import iskallia.vault.core.world.roll.FloatRoll;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
@@ -19,8 +20,9 @@ import xyz.iwolfking.woldsvaults.modifiers.deck.lib.IMultiplicativeDeckModifier;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.function.Function;
 
-public class GroupSynergyMultiplierModifier extends DeckModifier<GroupSynergyMultiplierModifier.Config> implements IMultiplicativeDeckModifier {
+public class GroupSynergyMultiplierModifier extends DeckModifier<GroupSynergyMultiplierModifier.Config> {
 
     public GroupSynergyMultiplierModifier(Config config) {
         super(config);
@@ -31,12 +33,7 @@ public class GroupSynergyMultiplierModifier extends DeckModifier<GroupSynergyMul
     }
 
     @Override
-    public float getModifierValue(Card card, CardPos cardPos, CardDeck cardDeck) {
-        return 1.0F;
-    }
-
-    @Override
-    public float getMultiplierValue(Card card, CardPos pos, CardDeck deck) {
+    public float getModifierValue(Card card, CardPos pos, CardDeck deck) {
         if (this.config == null) {
             return 1.0F;
         }
@@ -61,12 +58,11 @@ public class GroupSynergyMultiplierModifier extends DeckModifier<GroupSynergyMul
         MutableComponent mainComponent = new TextComponent("+")
                 .withStyle(ChatFormatting.GRAY)
                 .append(new TextComponent(String.format(java.util.Locale.ROOT, "%.1f%% ", rollValue)).withStyle(ChatFormatting.WHITE))
-                .append(new TextComponent("Multiplier per ").withStyle(ChatFormatting.GRAY))
+                .append(new TextComponent("Card Effectiveness per ").withStyle(ChatFormatting.GRAY))
                 .append(new TextComponent(groupName).withStyle(ChatFormatting.GOLD))
-                .append(new TextComponent(" Card ").withStyle(ChatFormatting.GRAY))
-                .append(new TextComponent("(Compounding)").withStyle(ChatFormatting.DARK_AQUA));
+                .append(new TextComponent(" Card ").withStyle(ChatFormatting.GRAY));
 
-        if (net.minecraft.client.gui.screens.Screen.hasShiftDown()) {
+        if (Screen.hasShiftDown()) {
             java.text.DecimalFormat df = new java.text.DecimalFormat("#.##");
             String min = df.format(this.config.modifierRoll.getMin() * 100.0F);
             String max = df.format(this.config.modifierRoll.getMax() * 100.0F);
@@ -74,26 +70,13 @@ public class GroupSynergyMultiplierModifier extends DeckModifier<GroupSynergyMul
         }
         tooltip.add(mainComponent);
 
-        MutableComponent formulaComponent = new TextComponent("  Formula: ").withStyle(ChatFormatting.DARK_GRAY)
-                .append(new TextComponent("(1.0 + ").withStyle(ChatFormatting.GRAY))
-                .append(new TextComponent(String.format(java.util.Locale.ROOT, "%.3f", this.getModifierValue())).withStyle(ChatFormatting.WHITE))
-                .append(new TextComponent(")^N ").withStyle(ChatFormatting.GRAY))
-                .append(new TextComponent("[N = Cards]").withStyle(ChatFormatting.DARK_GRAY));
-        tooltip.add(formulaComponent);
-
-        float baseFactor = 1.0F + this.getModifierValue();
-
-        MutableComponent scalingComponent = new TextComponent("  Scaling: ").withStyle(ChatFormatting.DARK_GRAY)
-                .append(new TextComponent("3c: ").withStyle(ChatFormatting.GRAY))
-                .append(new TextComponent(String.format(java.util.Locale.ROOT, "x%.2f", Math.pow(baseFactor, 3))).withStyle(ChatFormatting.WHITE))
-                .append(new TextComponent(" | ").withStyle(ChatFormatting.DARK_GRAY))
-                .append(new TextComponent("5c: ").withStyle(ChatFormatting.GRAY))
-                .append(new TextComponent(String.format(java.util.Locale.ROOT, "x%.2f", Math.pow(baseFactor, 5))).withStyle(ChatFormatting.WHITE))
-                .append(new TextComponent(" | ").withStyle(ChatFormatting.DARK_GRAY))
-                .append(new TextComponent("10c: ").withStyle(ChatFormatting.GOLD))
-                .append(new TextComponent(String.format(java.util.Locale.ROOT, "x%.2f", Math.pow(baseFactor, 10))).withStyle(ChatFormatting.GREEN));
-
-        tooltip.add(scalingComponent);
+        if (Screen.hasShiftDown()) {
+            MutableComponent formulaComponent = new TextComponent("  Formula: ").withStyle(ChatFormatting.DARK_GRAY)
+                    .append(new TextComponent("(1.0 + ").withStyle(ChatFormatting.GRAY))
+                    .append(new TextComponent(String.format(java.util.Locale.ROOT, "%.3f", this.getModifierValue())).withStyle(ChatFormatting.WHITE))
+                    .append(new TextComponent(")^N").withStyle(ChatFormatting.GRAY));
+            tooltip.add(formulaComponent);
+        }
     }
 
     @Override

@@ -30,6 +30,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(ModItems.CORE_OF_THE_VAULT_GODS);
+        simpleItem(ModItems.GODS_MASTERY);
+        simpleItem(ModItems.GREEDY_TICKET);
         simpleItem(ModItems.WEAPON_TYPE_FOCUS);
         simpleItem(ModItems.ARCANE_ESSENCE);
         simpleItem(ModItems.ARCANE_SHARD);
@@ -151,6 +154,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNINFUSED_TERRASTEEL_INGOT);
         simpleItem(ModItems.CONCEALED_CHAOS);
         simpleItem(ModItems.POWER_SHARD);
+        simpleItem(ModItems.YELLOW_VAULT_ESSENCE);
+        simpleItem(ModItems.BLUE_VAULT_ESSENCE);
+        simpleItem(ModItems.GREEN_VAULT_ESSENCE);
+        simpleItem(ModItems.LEAD_DYE_BASE);
         //simpleItem(ModItems.WEAPON_TYPE_SETTER);
 
         withExistingParent("owned_crafting_table",
@@ -290,9 +297,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 withExistingParent(Compressium.MODID + ":" + name + "_" + (i + 1), ResourceLocation.fromNamespaceAndPath(Compressium.MODID, "block/" + name + "_" + (i + 1)));
             }
         });
-
     }
-
 
     private ItemModelBuilder simpleItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

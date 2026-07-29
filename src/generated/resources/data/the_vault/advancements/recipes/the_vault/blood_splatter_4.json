@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "the_vault:red_vault_essence"
+      "the_vault:blood_splatter_4"
     ]
   },
   "criteria": {
-    "has_perfect_painite": {
+    "has_red_carpet": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "the_vault:perfect_painite"
+              "minecraft:red_carpet"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "the_vault:red_vault_essence"
+        "recipe": "the_vault:blood_splatter_4"
       }
     }
   },
   "requirements": [
     [
-      "has_perfect_painite",
+      "has_red_carpet",
       "has_the_recipe"
     ]
   ]

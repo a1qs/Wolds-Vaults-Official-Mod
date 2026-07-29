@@ -2,28 +2,47 @@ package xyz.iwolfking.woldsvaults.datagen;
 
 import com.simibubi.create.content.logistics.filter.ItemAttribute;
 import iskallia.vault.VaultMod;
+import iskallia.vault.config.MysteryEggConfig;
 import iskallia.vault.util.StringUtils;
-import net.joseph.vaultfilters.attributes.abstracts.BooleanAttribute;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SpawnEggItem;
 import net.minecraftforge.common.data.LanguageProvider;
 import xyz.iwolfking.vhapi.api.registry.objective.CustomObjectiveRegistryEntry;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
 import xyz.iwolfking.woldsvaults.api.core.vault_events.VaultEvent;
 import xyz.iwolfking.woldsvaults.api.core.vault_events.VaultEventSystem;
 import xyz.iwolfking.woldsvaults.init.*;
+import xyz.iwolfking.woldsvaults.integration.arsnouveau.init.ArsSpawnEggItems;
+import xyz.iwolfking.woldsvaults.integration.mekanism.init.ModGases;
+import xyz.iwolfking.woldsvaults.integration.mekanism.init.ModPigments;
 import xyz.iwolfking.woldsvaults.integration.vaultfilters.AlchemyIngredientTypeAttribute;
 import xyz.iwolfking.woldsvaults.integration.vaultfilters.AlchemyItemAttribute;
 import xyz.iwolfking.woldsvaults.integration.vaultfilters.CatalystItemAttribute;
 import xyz.iwolfking.woldsvaults.integration.vaultfilters.VaultDollCompletedAttribute;
 import xyz.iwolfking.woldsvaults.objectives.data.EnchantedEventsRegistry;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class ModLanguageProvider extends LanguageProvider {
 
+    private static final Map<String, String> LANG_REGISTRY = new HashMap<>();
+    private static final Map<Item, String> ITEM_REGISTRY = new HashMap<>();
+
     public ModLanguageProvider(DataGenerator gen) {
         super(gen, WoldsVaults.MOD_ID, "en_us");
+    }
+
+    public static void register(String id, String text) {
+        LANG_REGISTRY.put(id, text);
+    }
+
+    public static void register(Item item, String text) {
+        ITEM_REGISTRY.put(item, text);
     }
 
     public void add(CustomObjectiveRegistryEntry entry, String text) {
@@ -42,14 +61,52 @@ public class ModLanguageProvider extends LanguageProvider {
         add("create.item_attributes." + attribute.getTranslationKey() + ".inverted", invertedText);
     }
 
+    public void ritual(Item dummyItem, String ritualTooltip, ResourceLocation ritualId, String ritualName) {
+        add("ritual." + ritualId.getNamespace() + "." + ritualId.getPath() + ".started", ritualName + " initiated!");
+        add("ritual." + ritualId.getNamespace() + "." + ritualId.getPath() + ".finished", ritualName + " completed!");
+        add(dummyItem, "Ritual: " + ritualName);
+        add("item." + dummyItem.getRegistryName().getNamespace() + ".ritual_dummy." + dummyItem.getRegistryName().getPath().replace("ritual_dummy/", "") + ".tooltip", ritualTooltip);
+    }
+
+    public void pentacle(String pentacleId, String name, String introTitle, String intro, String usesTitle, String usesText) {
+        add("book.occultism.dictionary_of_spirits.pentacles." + pentacleId + ".name", name);
+        add("pentacle.occultism." + pentacleId, name);
+        add("multiblock.occultism." + pentacleId, name);
+        add("book.occultism.dictionary_of_spirits.pentacles." + pentacleId + ".intro.title", introTitle);
+        add("book.occultism.dictionary_of_spirits.pentacles." + pentacleId + ".intro.text", intro);
+        add("book.occultism.dictionary_of_spirits.pentacles." + pentacleId + ".uses.title", usesTitle);
+        add("book.occultism.dictionary_of_spirits.pentacles." + pentacleId + ".uses.text", usesText);
+    }
+
+
     @Override
     protected void addTranslations() {
+        LANG_REGISTRY.forEach(this::add);
+        ITEM_REGISTRY.forEach(this::add);
+        iskallia.vault.init.ModConfigs.MYSTERY_EGG = new MysteryEggConfig().readConfig();
+        iskallia.vault.init.ModConfigs.MYSTERY_EGG.POOL.forEach((productEntry, number) -> {
+            if(productEntry.getItem() instanceof SpawnEggItem spawnEggItem && spawnEggItem != Items.PIG_SPAWN_EGG) {
+                add("ritual." + WoldsVaults.MOD_ID + "." + "infuse_" + spawnEggItem.getType(productEntry.getNBT()).getRegistryName().getPath() + "_spawn_egg" + ".started", "Imbue Spawn Egg" + " initiated!");
+                add("ritual." + WoldsVaults.MOD_ID + "." + "infuse_" + spawnEggItem.getType(productEntry.getNBT()).getRegistryName().getPath() + "_spawn_egg" + ".finished", "Imbue Spawn Egg" + " completed!");
+            }
+        });
+
         ModCustomVaultObjectiveEntries.getEntries().forEach(customObjectiveRegistryEntry -> {
             add(customObjectiveRegistryEntry, customObjectiveRegistryEntry.getName());
         });
+        pentacle("velara", "Velara's Grove", "Velara's Grove", "**Purpose:** Commune with [#](00FF00)Velara[#]()\n\\\n\\\nPart of a quad divine alignment, [#](00FF00)Velara's Grove[#]() can be used to commune with the gracious Velara, who may provide the help of their green thumb with a suitable offering.\n", "Uses", "");
+        pentacle("idona", "Idona's Battlefield", "Idona's Battlefield", "**Purpose:** Commune with [#](00FF00)Idona[#]()\n\\\n\\\nPart of a quad divine alignment, [#](00FF00)Idona's Battlefield[#]() can be used to commune with the ruthless Idona, who may lend their bloodthirsty nature to your rituals with a suitable offering.\n", "Uses", "");
+        pentacle("tenos", "Tenos' Library", "Tenos' Library", "**Purpose:** Commune with [#](00FF00)Tenos[#]()\n\\\n\\\nPart of a quad divine alignment, [#](00FF00)Tenos' Library[#]() can be used to commune with the wise Tenos, who may lend their vast academic knowledge to your rituals with a suitable offering.\n", "Uses", "");
+        pentacle("wendarr", "Wendarr's Study", "Wendarr's Study", "**Purpose:** Commune with [#](00FF00)Wendarr[#]()\n\\\n\\\nPart of a quad divine alignment, [#](00FF00)Wendarr's Study[#]() can be used to commune with the patient Wendarr, who may lend their time bending powers to your rituals with a suitable offering.\n", "Uses", "");
+        pentacle("god_alignment", "Quaddeus Alignment", "Quaddeus Alignment", "**Purpose:** Commune with the [#](00FF00)Vault Gods[#]()\n\\\n\\\nThe full quad divine alignment, [#](00FF00)Quaddeus Alignment[#]() can be used to commune with all of the mighty Vault Gods at once, and with powerful enough offerings, may even assist with mighty rituals using their combined strength.\n", "Uses", "");
+
         add(new AlchemyItemAttribute(false), "is an Alchemy ingredient", "is not an Alchemy ingredient");
         add(new CatalystItemAttribute(false), "is an Alchemy catalyst", "is not an Alchemy catalyst");
         add(new AlchemyIngredientTypeAttribute(""), "is an Alchemy ingredient of type \"%1$s\"", "is not an Alchemy ingredient of type \"%1$s\"");
+        add(ModBlocks.DECO_IDONA_ALTAR_BLOCK, "God Altar (Idona - Decorative)");
+        add(ModBlocks.DECO_VELARA_ALTAR_BLOCK, "God Altar (Velara - Decorative)");
+        add(ModBlocks.DECO_WENDARR_ALTAR_BLOCK, "God Altar (Wendarr - Decorative)");
+        add(ModBlocks.DECO_TENOS_ALTAR_BLOCK, "God Altar (Tenos - Decorative)");
         add(ModBlocks.CONFIGURABLE_FLOATING_TEXT_BLOCK, "Magic Text");
         add(ModBlocks.OWNED_CRAFTING_TABLE_BLOCK, "Owned Crafting Table");
         add(ModBlocks.CRATE_CRACKER_BLOCK, "Crate Cracker");
@@ -70,6 +127,21 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModEntities.SINGULARITY_CREEPER, "Singularity Creeper");
         add(ModEntities.CUSTOM_FANGS, "Fangs");
         add(ModItems.GREED_TREE_RESET_ITEM, "Greed Infused Neuralizer");
+        add(ModItems.BLUE_VAULT_ESSENCE, "Blue Vault Essence");
+        add(ModItems.GREEN_VAULT_ESSENCE, "Green Vault Essence");
+        add(ModItems.YELLOW_VAULT_ESSENCE, "Yellow Vault Essence");
+        add(ModPigments.IDONA_RED.getTranslationKey(), "Idona Red Pigment");
+        add(ModPigments.WENDARR_YELLOW.getTranslationKey(), "Wendarr Yellow Pigment");
+        add(ModPigments.VELARA_GREEN.getTranslationKey(), "Velara Green Pigment");
+        add(ModPigments.TENOS_BLUE.getTranslationKey(), "Tenos Blue Pigment");
+        add(ModPigments.FOIL_PIGMENT.getTranslationKey(), "Card Foil Coating");
+        add(ModPigments.CARD_PAINT_BASE.getTranslationKey(), "Card Paint Base");
+        add(ModPigments.CARD_PAINT_BLUE.getTranslationKey(), "Blue Card Paint");
+        add(ModPigments.CARD_PAINT_GREEN.getTranslationKey(), "Green Card Paint");
+        add(ModPigments.CARD_PAINT_RED.getTranslationKey(), "Red Card Paint");
+        add(ModPigments.CARD_PAINT_YELLOW.getTranslationKey(), "Yellow Card Paint");
+        add(ModGases.LEAD_GAS.getTranslationKey(), "Gaseous Lead");
+        add(ModItems.LEAD_DYE_BASE, "Lead Dye Base");
         add("fix.woldsvaults.schematic_terminal_no_permission", "You do not have permission to place an Overworld Inscription here!");
         add("fluid.woldsvaults.molten_trinket", "Molten Trinket");
         add("block.woldsvaults.prismatic_glue", "Prismatic Glue");
@@ -99,9 +171,16 @@ public class ModLanguageProvider extends LanguageProvider {
         add("deck.woldsvaults.adjacency_modifier_type_2", "when %1$s to at least one");
         add("deck.woldsvaults.adjacency_type_orthogonal", "orthogonal");
         add("deck.woldsvaults.adjacency_type_diagonal", "diagonal");
-        add("deck.woldsvaults.adjacency_type_surrounding", "adjacent");
+        add("deck.woldsvaults.adjacency_type_surrounding", "surrounding");
         add("deck.woldsvaults.adjacency_type_surrounding_2", "within 2 spaces");
         add("deck.woldsvaults.adjacency_type_starcross", "within two orthogonal or one diagonal");
+        add("deck.woldsvaults.adjacency_type_row", "row");
+        add("deck.woldsvaults.adjacency_type_column", "column");
+        add("deck.woldsvaults.adjacency_type_adjacent", "adjacent");
+        add("deck.woldsvaults.adjacency_type_above", "above");
+        add("deck.woldsvaults.adjacency_type_below", "below");
+        add("deck.woldsvaults.adjacency_type_left", "left");
+        add("deck.woldsvaults.adjacency_type_right", "right");
         add("deck.woldsvaults.adjacency_type_failure", "invalid configuration");
         add("deck.woldsvaults.dominance_deck_modifier_current", "Currently: %1$s");
         add("deck.woldsvaults.dominance_deck_modifier_dominant", "+%1$s card efficiency to cards with the most dominant group in the deck (%2$s)");
@@ -151,6 +230,9 @@ public class ModLanguageProvider extends LanguageProvider {
         add("util.woldsvaults.objective_text", "Objective: ");
         add("util.woldsvaults.vault_modifier_added", "%1$s was added to the Vault!");
         add("util.woldsvaults.timed_modifier_added", "%1$s added %2$s to the Vault for %3$s seconds!");
+        add("item.woldsvaults.core_of_the_vault_gods", "Core of the Vault Gods");
+        add("item.woldsvaults.gods_mastery", "God's Mastery");
+        add("item.woldsvaults.greedy_ticket", "Greedy Ticket");
         add("item.woldsvaults.rotten_heart", "Rotten Heart");
         add("item.woldsvaults.rotten_apple", "Rotten Apple");
         add("item.woldsvaults.verdant_globule", "Verdant Globule");
@@ -213,6 +295,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("jei.the_vault.completion_crate_ballistic_bingo_full_loot", "Ballistic Bingo Crate (Full)");
         add("jei.the_vault.completion_crate_bingo_wold_full_loot", "Bingo Crate (Full)");
         add("jei.the_vault.completion_crate_brutal_bosses_loot", "Brutal Bosses Crate");
+        add("jei.the_vault.completion_crate_hyper_loot", "Hyper Crate");
         add("jei.the_vault.completion_crate_corrupted_loot", "Corrupted Crate");
         add("jei.the_vault.completion_crate_chaos_loot", "Chaos Completion Crate");
         add("jei.the_vault.dungeon_mobs_loot", "Dungeon Mobs");
@@ -486,6 +569,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.ECHO_POG_BLOCK, "Block of Echo Pog");
         add(ModBlocks.POG_BLOCK, "Block of Pog");
         add(ModBlocks.TIME_TRIAL_TROPHY_BLOCK, "Time Trial Trophy");
+        add(ModBlocks.LOCKED_TREASURE_CONTAINER_BLOCK, "Locked Treasure Chest");
         add("block.woldsvaults.card_shop_pedestal", "Card Vendor Pedestal");
         add("block.woldsvaults.weaving_station", "Weaving Station");
         add("item.woldsvaults.recipe_blueprint", "Recipe Blueprint");

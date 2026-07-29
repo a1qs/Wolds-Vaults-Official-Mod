@@ -15,8 +15,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.p3pp3rf1y.sophisticatedbackpacks.backpack.BackpackItem;
+import xyz.iwolfking.vhapi.api.util.ConditionalModUtils;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
 import xyz.iwolfking.woldsvaults.api.lib.item.MultiLootableItem;
+import xyz.iwolfking.woldsvaults.integration.arsnouveau.init.ArsSpawnEggItems;
+import xyz.iwolfking.woldsvaults.integration.occultism.init.ModRitualDummyItems;
 import xyz.iwolfking.woldsvaults.items.*;
 import xyz.iwolfking.woldsvaults.items.alchemy.CatalystItem;
 import xyz.iwolfking.woldsvaults.items.alchemy.DecoPotionItem;
@@ -50,7 +53,6 @@ public class ModItems {
     public static ItemVaultCrystalSeal CRYSTAL_SEAL_SURVIVOR;
     public static ItemVaultCrystalSeal CRYSTAL_SEAL_UNHINGED_SCAVINGO;
     public static ItemVaultCrystalSeal CRYSTAL_SEAL_RAID_ROCK_INFINITE_HARD;
-
 
     public static VaultBattleStaffItem BATTLESTAFF;
     public static VaultTridentItem TRIDENT;
@@ -133,6 +135,9 @@ public class ModItems {
     public static BasicItem REPAIR_AUGMENTER;
     public static BasicItem CRYSTAL_REINFORCEMENT;
     public static BasicItem RESONATING_REINFORCEMENT;
+    public static CoreOfTheVaultGodsItem CORE_OF_THE_VAULT_GODS;
+    public static GodsMasteryItem GODS_MASTERY;
+    public static GreedyTicketItem GREEDY_TICKET;
     public static BasicItem STYLISH_FOCUS;
     public static BasicItem MERCY_ORB;
     public static BasicItem UBER_CHAOS_CATALYST;
@@ -164,6 +169,9 @@ public class ModItems {
     public static BasicItem GEM_REAGENT_SPARKLETINE;
     public static BasicItem GEM_REAGENT_TUBIUM;
     public static BasicItem AUGMENT_PIECE;
+    public static BasicItem BLUE_VAULT_ESSENCE;
+    public static BasicItem YELLOW_VAULT_ESSENCE;
+    public static BasicItem GREEN_VAULT_ESSENCE;
     public static PoltergeistPlum POLTERGEIST_PLUM;
 
     //Zealot items
@@ -214,6 +222,7 @@ public class ModItems {
     public static BasicItem MOB_BINDING_STONE;
 
     public static BasicItem UNINFUSED_TERRASTEEL_INGOT;
+    public static BasicItem LEAD_DYE_BASE;
 
     public static Map<DyeColor, BasicItem> COLORED_UNOBTANIUMS = new HashMap<>();
     public static BasicItem RAINBOW_UNOBTANIUM;
@@ -278,6 +287,9 @@ public class ModItems {
         registry.register(REPAIR_AUGMENTER);
         registry.register(CRYSTAL_REINFORCEMENT);
         registry.register(RESONATING_REINFORCEMENT);
+        registry.register(CORE_OF_THE_VAULT_GODS);
+        registry.register(GODS_MASTERY);
+        registry.register(GREEDY_TICKET);
         registry.register(CHISELING_FOCUS);
         registry.register(ZEPHYR_CHARM);
         registry.register(STYLISH_FOCUS);
@@ -372,11 +384,24 @@ public class ModItems {
         registry.register(MOLTEN_TRINKET_BUCKET);
         registry.register(GREED_TREE_RESET_ITEM);
         registry.register(CONCEALED_CHAOS);
+        registry.register(YELLOW_VAULT_ESSENCE);
+        registry.register(BLUE_VAULT_ESSENCE);
+        registry.register(GREEN_VAULT_ESSENCE);
+        registry.register(LEAD_DYE_BASE);
         COLORED_UNOBTANIUMS.forEach((s, bi) -> {
             registry.register(bi);
         });
         registry.register(RAINBOW_UNOBTANIUM);
         registry.register(POWER_SHARD);
+
+        //Mod dependent loading
+        if(ConditionalModUtils.isModPresent("occultism")) {
+            ModRitualDummyItems.registerItems(event);
+        }
+
+        if(ConditionalModUtils.isModPresent("ars_nouveau")) {
+            ArsSpawnEggItems.registerItems(event);
+        }
 
     }
 
@@ -443,6 +468,9 @@ public class ModItems {
 
         CRYSTAL_REINFORCEMENT = new BasicItem(WoldsVaults.id("crystal_reinforcement"), (new Item.Properties()).tab(ModCreativeTabs.WOLDS_VAULTS));
         RESONATING_REINFORCEMENT = new BasicItem(WoldsVaults.id("resonating_reinforcement"), (new Item.Properties()).tab(ModCreativeTabs.WOLDS_VAULTS));
+        CORE_OF_THE_VAULT_GODS = new CoreOfTheVaultGodsItem(WoldsVaults.id("core_of_the_vault_gods"));
+        GODS_MASTERY = new GodsMasteryItem(WoldsVaults.id("gods_mastery"));
+        GREEDY_TICKET = new xyz.iwolfking.woldsvaults.items.GreedyTicketItem(WoldsVaults.id("greedy_ticket"), (new Item.Properties()).tab(ModCreativeTabs.WOLDS_VAULTS));
 
         STYLISH_FOCUS = new BasicItem(WoldsVaults.id("stylish_focus"), (new Item.Properties()).tab(ModCreativeTabs.WOLDS_VAULTS));
         CHISELING_FOCUS = new ToolModifierNullifyingItem(WoldsVaults.id("chiseling_focus"), (new Item.Properties()).tab(ModCreativeTabs.WOLDS_VAULTS));
@@ -478,6 +506,9 @@ public class ModItems {
         AUGMENT_PIECE = new BasicItem(WoldsVaults.id("augment_piece"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
         VAULT_DIAMOND_NUGGET = new BasicItem(WoldsVaults.id("vault_diamond_nugget"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
         CHROMA_CORE = new BasicItem(WoldsVaults.id("chroma_core"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
+        YELLOW_VAULT_ESSENCE = new BasicItem(WoldsVaults.id("yellow_vault_essence"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
+        BLUE_VAULT_ESSENCE = new BasicItem(WoldsVaults.id("blue_vault_essence"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
+        GREEN_VAULT_ESSENCE = new BasicItem(WoldsVaults.id("green_vault_essence"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
 
         POGOMINIUM_INGOT = new BasicItem(WoldsVaults.id("pogominium_ingot"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
         INFUSED_DRIFTWOOD = new BasicItem(WoldsVaults.id("infused_driftwood"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
@@ -531,6 +562,7 @@ public class ModItems {
         ECHOING_SEED_BASE = new BasicItem(WoldsVaults.id("echoing_seed_base"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
 
         UNINFUSED_TERRASTEEL_INGOT = new BasicItem(WoldsVaults.id("uninfused_terrasteel_ingot"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
+        LEAD_DYE_BASE = new BasicItem(WoldsVaults.id("lead_dye_base"), new Item.Properties().tab(ModCreativeTabs.WOLDS_VAULTS));
 
         COMBINED_TRINKET = new CombinedTrinketItem(WoldsVaults.id("combined_trinket"));
 

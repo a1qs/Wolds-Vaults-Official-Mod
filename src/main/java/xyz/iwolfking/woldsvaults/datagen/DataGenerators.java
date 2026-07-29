@@ -1,14 +1,11 @@
 package xyz.iwolfking.woldsvaults.datagen;
 
-import com.supermartijn642.rechiseled.registration.RechiseledRegistrationImpl;
 import com.supermartijn642.rechiseled.registration.data.*;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
-import vazkii.botania.data.BlockTagProvider;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
 
 @Mod.EventBusSubscriber(modid = WoldsVaults.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -95,6 +92,10 @@ public class DataGenerators {
             gen.addProvider(new ModGreedTraderProvider(gen));
             gen.addProvider(new ModGreedCauldronProvider(gen));
             gen.addProvider(new ModCompanionProvider(gen));
+            gen.addProvider(new ModCompanionRelicsProvider(gen));
+            gen.addProvider(new ModImplicitDeckCoresProvider(gen));
+            gen.addProvider(new ModPentacleProvider(gen));
+            gen.addProvider(new ModEntityTagProvider(gen, efh));
         }
     }
 

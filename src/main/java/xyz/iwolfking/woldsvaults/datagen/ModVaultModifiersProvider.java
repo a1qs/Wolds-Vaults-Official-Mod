@@ -174,7 +174,7 @@ public class ModVaultModifiersProvider extends AbstractVaultModifierProvider {
             entityEffect(modifierBuilder, VaultMod.id("big_mobs"),  EMPTY_ENTITY_PREDICATE, xyz.iwolfking.woldsvaults.init.ModEffects.GROWING.getRegistryName(), 1, 0.1F, "Maximized", "#a996ca", "Mobs in this vault gain Growing II 10% of the time", "Mobs in this vault gain Growing some of the time", VaultMod.id("gui/modifiers/chunky"));
             entityEffect(modifierBuilder, VaultMod.id("chungus"),  EMPTY_ENTITY_PREDICATE, xyz.iwolfking.woldsvaults.init.ModEffects.GROWING.getRegistryName(), 1, 1.0F, "Big Chungus", "#a996ca", "Mobs in this vault gain Growing II 100% of the time", "Mobs in this vault gain Growing some of the time", VaultMod.id("gui/modifiers/chunky"));
             entityEffect(modifierBuilder, VaultMod.id("mini_mobs"),  EMPTY_ENTITY_PREDICATE, xyz.iwolfking.woldsvaults.init.ModEffects.SHRINKING.getRegistryName(), 1, 0.1F, "Minimized", "#a996ca", "Mobs in this vault gain Shrinking II 10% of the time", "Mobs in this vault gain Shrinking some of the time", VaultMod.id("gui/modifiers/chunky"));
-            entityEffect(modifierBuilder, VaultMod.id("daycare"),  EMPTY_ENTITY_PREDICATE, xyz.iwolfking.woldsvaults.init.ModEffects.SHRINKING.getRegistryName(), 1, 1.0F, "Daycare", "#a996ca", "Mobs in this vault gain Shrinking II 100% of the time", "Mobs in this vault gain Shrinking all of the time", VaultMod.id("gui/modifiers/chunky"));
+            entityEffect(modifierBuilder, VaultMod.id("daycare_effect"),  EMPTY_ENTITY_PREDICATE, xyz.iwolfking.woldsvaults.init.ModEffects.SHRINKING.getRegistryName(), 1, 1.0F, "Daycare", "#a996ca", "Mobs in this vault gain Shrinking II 100% of the time", "Mobs in this vault gain Shrinking all of the time", VaultMod.id("gui/modifiers/chunky"));
 
             hunter(modifierBuilder, VaultMod.id("living_hunter"), hunterBuilder -> {
                 hunterBuilder.entry(PartialBlockState.of(ModBlocks.LIVING_CHEST), 64, "living", 65280);
@@ -658,7 +658,33 @@ public class ModVaultModifiersProvider extends AbstractVaultModifierProvider {
 
             antiEffectImmunity(modifierBuilder, WoldsVaults.id("blindness_immunity_cancel"), ResourceLocation.withDefaultNamespace("blindness"), "Anti-Blindness Immunity", "#47402d", "Blindness can't be prevented", null, VaultMod.id("gui/modifiers/impossible"));
 
+            hyperMarker(modifierBuilder, WoldsVaults.id("rare_crate_tier"), "Rare Crate Tier", "#5599ff",
+                    "Injects a set of Rare rewards into the completion crate", WoldsVaults.id("gui/modifiers/rare_crate_tier"));
+            hyperMarker(modifierBuilder, WoldsVaults.id("epic_crate_tier"), "Epic Crate Tier", "#b34dff",
+                    "Injects a set of Epic rewards into the completion crate", WoldsVaults.id("gui/modifiers/epic_crate_tier"));
+            hyperMarker(modifierBuilder, WoldsVaults.id("omega_crate_tier"), "Omega Crate Tier", "#4dffd2",
+                    "Injects a set of Omega rewards into the completion crate", WoldsVaults.id("gui/modifiers/omega_crate_tier"));
+            hyperMarker(modifierBuilder, WoldsVaults.id("greedy_crate_tier"), "Greedy Crate Tier", "#ffd24d",
+                    "+100% Greed Coins in the completion crate", WoldsVaults.id("gui/modifiers/greedy_crate_tier"));
+            modifierBuilder.type(WoldsVaults.id("modifier_type/hyper_escalation").toString(), (typeBuilder) -> typeBuilder.modifier(WoldsVaults.id("hyper").toString(), (modifierEntryBuilder) -> {
+                modifierEntryBuilder.property("statFactor", 0.0F);
+                modifierEntryBuilder.property("speedPerStack", 0.0F);
+                createModifierDisplay(modifierEntryBuilder, "HYPER", "#ffaa00",
+                        "Mob health and damage multiply per hyperboss kill", null, VaultMod.id("gui/modifiers/overpower"));
+            }));
+
         });
+    }
+
+    /**
+     * An inert marker def (chance_artifact with chance 0, the "challenged" pattern): the stack
+     * count IS the data, read at crate award by HyperCrateRewards / MixinRunner.
+     */
+    public static void hyperMarker(ModifierBuilder builder, ResourceLocation modifierId, String name, String color, String description, ResourceLocation icon) {
+        builder.type(VaultMod.id("modifier_type/chance_artifact").toString(), (typeBuilder) -> typeBuilder.modifier(modifierId.toString(), (modifierEntryBuilder) -> {
+            modifierEntryBuilder.property("chance", 0.0F);
+            createModifierDisplay(modifierEntryBuilder, name, color, description, null, icon);
+        }));
     }
 
     public static void brazierPool(ModifierBuilder builder, ResourceLocation modifierId, ResourceLocation replacementPoolId, String name, String color, String description, String formattedDescription, ResourceLocation icon) {
