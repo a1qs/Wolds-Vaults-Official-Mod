@@ -1,6 +1,5 @@
 package xyz.iwolfking.woldsvaults.modifiers.vault;
 
-import atomicstryker.infernalmobs.common.InfernalMobsCore;
 import com.google.gson.annotations.Expose;
 import iskallia.vault.core.event.CommonEvents;
 import iskallia.vault.core.vault.Vault;
@@ -12,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraftforge.eventbus.api.EventPriority;
-import xyz.iwolfking.woldsvaults.objectives.data.BrutalBossesRegistry;
+import xyz.iwolfking.woldsvaults.WoldsVaults;
 
 import java.util.Random;
 
@@ -31,7 +30,7 @@ public class InfernalMobModifier extends VaultModifier<InfernalMobModifier.Prope
                     if ((this.properties).filter.test(entity)) {
                         Random random = entity.level.getRandom();
                        if(random.nextDouble() < this.properties.getChance()) {
-                           InfernalMobsCore.instance().addEntityModifiersByString(entity, BrutalBossesRegistry.getRandomMobModifiers(this.properties.getAmount(), false));
+                           WoldsVaults.LOGGER.error("Tried to add an entity because of modifier: {}", this.getId());
                        }
                     }
 

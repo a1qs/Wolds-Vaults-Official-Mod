@@ -1,6 +1,5 @@
 package xyz.iwolfking.woldsvaults.api.util;
 
-import atomicstryker.infernalmobs.common.InfernalMobsCore;
 import gaia.entity.AbstractGaiaEntity;
 import iskallia.vault.entity.boss.ArtifactBossEntity;
 import iskallia.vault.entity.boss.TheVesselEntity;
@@ -23,7 +22,7 @@ public class MaxHealthDamageHelper {
         else if(VaultMobUtils.isSpecialMob(target)) {
             return 0.25F;
         }
-        else if(ChampionLogic.isChampion(target) || InfernalMobsCore.getMobModifiers(target) != null) {
+        else if(ChampionLogic.isChampion(target)) {
             return 0.5F;
         }
         else if(target instanceof AbstractGaiaEntity) {

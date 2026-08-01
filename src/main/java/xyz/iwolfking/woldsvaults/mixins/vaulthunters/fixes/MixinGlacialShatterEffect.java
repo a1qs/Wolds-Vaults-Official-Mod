@@ -1,6 +1,5 @@
 package xyz.iwolfking.woldsvaults.mixins.vaulthunters.fixes;
 
-import atomicstryker.infernalmobs.common.InfernalMobsCore;
 import iskallia.vault.effect.GlacialShatterEffect;
 import iskallia.vault.entity.champion.ChampionLogic;
 import iskallia.vault.event.ActiveFlags;
@@ -57,7 +56,7 @@ public class MixinGlacialShatterEffect {
                             BlockParticleOption particle = new BlockParticleOption(ParticleTypes.BLOCK, Blocks.PACKED_ICE.defaultBlockState());
                             ((ServerLevel) event.getEntity().getLevel()).sendParticles(particle, entity.position().x, entity.position().y + mob.getBbHeight() / 2.0F, entity.position().z, 200, mob.getBbWidth() / 2.0F, mob.getBbHeight() / 2.0F, mob.getBbWidth() / 2.0F, 1.5);
                             event.getEntity().getLevel().playSound(null, event.getEntity(), SoundEvents.GLASS_BREAK, SoundSource.BLOCKS, 1.0F, 0.75F);
-                            if (ChampionLogic.isChampion(event.getEntity()) || InfernalMobsCore.getMobModifiers(event.getEntityLiving()) != null && InfernalMobsCore.getMobModifiers(event.getEntityLiving()).getModSize() != 0) {
+                            if (ChampionLogic.isChampion(event.getEntity())) {
                                 ActiveFlags.IS_GLACIAL_SHATTER_ATTACKING.runIfNotSet(() -> {
                                     event.getEntity().hurt(DamageSource.playerAttack(player), ((Mob) event.getEntity()).getMaxHealth() * 0.25F);
                                 });
