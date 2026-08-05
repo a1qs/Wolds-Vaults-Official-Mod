@@ -1202,7 +1202,23 @@
     },
     {
       "value": {
+        "id": "the_vault:blood_horde_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
         "id": "the_vault:blood_silverfish_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:blood_skeleton_egg",
         "amountMin": 1,
         "amountMax": 1
       },
@@ -1250,6 +1266,14 @@
     },
     {
       "value": {
+        "id": "the_vault:cave_skeleton_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
         "id": "the_vault:crab_egg",
         "amountMin": 1,
         "amountMax": 1
@@ -1259,6 +1283,14 @@
     {
       "value": {
         "id": "the_vault:craftenstein_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:creeper_egg",
         "amountMin": 1,
         "amountMax": 1
       },
@@ -1331,6 +1363,14 @@
     {
       "value": {
         "id": "the_vault:deep_dark_zombie_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:drowned_egg",
         "amountMin": 1,
         "amountMax": 1
       },
@@ -1474,6 +1514,14 @@
     },
     {
       "value": {
+        "id": "the_vault:enderman_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
         "id": "the_vault:grimwick_egg",
         "amountMin": 1,
         "amountMax": 1
@@ -1483,6 +1531,14 @@
     {
       "value": {
         "id": "the_vault:grinch_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:husk_egg",
         "amountMin": 1,
         "amountMax": 1
       },
@@ -1522,7 +1578,55 @@
     },
     {
       "value": {
+        "id": "the_vault:miner_zombie_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:mummy_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:mushroom_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
         "id": "the_vault:overgrown_tank_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:overgrown_woodman_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:overgrown_zombie_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:piglin_egg",
         "amountMin": 1,
         "amountMax": 1
       },
@@ -1562,6 +1666,30 @@
     },
     {
       "value": {
+        "id": "the_vault:plastic_horde_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:plastic_skeleton_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:plastic_slime_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
         "id": "the_vault:plastic_tank_egg",
         "amountMin": 1,
         "amountMax": 1
@@ -1571,6 +1699,14 @@
     {
       "value": {
         "id": "the_vault:plastic_villager_tank_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:plastic_zombie_egg",
         "amountMin": 1,
         "amountMax": 1
       },
@@ -1610,6 +1746,22 @@
     },
     {
       "value": {
+        "id": "the_vault:skeleton_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:skeleton_pirate_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
         "id": "the_vault:smolcap_egg",
         "amountMin": 1,
         "amountMax": 1
@@ -1619,6 +1771,14 @@
     {
       "value": {
         "id": "the_vault:spirit_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:stray_egg",
         "amountMin": 1,
         "amountMax": 1
       },
@@ -2514,6 +2674,14 @@
     },
     {
       "value": {
+        "id": "the_vault:vault_fighter_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
         "id": "the_vault:vault_green_gummy_soldier_egg",
         "amountMin": 1,
         "amountMax": 1
@@ -2578,7 +2746,31 @@
     },
     {
       "value": {
+        "id": "the_vault:winterwalker_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:wither_skeleton_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
         "id": "the_vault:yeti_egg",
+        "amountMin": 1,
+        "amountMax": 1
+      },
+      "weight": 1
+    },
+    {
+      "value": {
+        "id": "the_vault:zombie_egg",
         "amountMin": 1,
         "amountMax": 1
       },

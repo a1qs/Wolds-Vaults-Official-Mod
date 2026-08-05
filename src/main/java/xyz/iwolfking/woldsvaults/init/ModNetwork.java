@@ -9,6 +9,10 @@ import xyz.iwolfking.woldsvaults.WoldsVaults;
 import xyz.iwolfking.woldsvaults.network.message.*;
 import xyz.iwolfking.woldsvaults.network.packets.OpenFloatingTextScreenPacket;
 import xyz.iwolfking.woldsvaults.network.packets.StopFlightMessage;
+import xyz.iwolfking.woldsvaults.network.message.BrewingAltarParticleMessage;
+import xyz.iwolfking.woldsvaults.network.message.ClientboundSyncGamerulesMessage;
+import xyz.iwolfking.woldsvaults.network.message.ElixirParticleMessage;
+import xyz.iwolfking.woldsvaults.network.message.MagicMissileWarningMessage;
 import xyz.iwolfking.woldsvaults.network.packets.TimeTrialLeaderboardS2CPacket;
 import xyz.iwolfking.woldsvaults.network.packets.UpdateFloatingTextPacket;
 
@@ -34,6 +38,8 @@ public class ModNetwork {
         CHANNEL.registerMessage(id++, S2CSyncLevelCapMessage.class, S2CSyncLevelCapMessage::encode, S2CSyncLevelCapMessage::decode, S2CSyncLevelCapMessage::handle);
         CHANNEL.registerMessage(id++, C2SIncreaseLevelCapMessage.class, C2SIncreaseLevelCapMessage::encode, C2SIncreaseLevelCapMessage::decode, C2SIncreaseLevelCapMessage::handle);
         CHANNEL.registerMessage(id++, S2CSyncGlobalCap.class, S2CSyncGlobalCap::encode, S2CSyncGlobalCap::decode, S2CSyncGlobalCap::handle);
+        CHANNEL.registerMessage(id++, MagicMissileWarningMessage.class, MagicMissileWarningMessage::encode, MagicMissileWarningMessage::decode, MagicMissileWarningMessage::handle);
+        CHANNEL.registerMessage(id++, LuckyHitCooldownParticleMessage.class, LuckyHitCooldownParticleMessage::encode, LuckyHitCooldownParticleMessage::decode, LuckyHitCooldownParticleMessage::handle);
     }
 
     public static <T> void sendToServer(T message) {

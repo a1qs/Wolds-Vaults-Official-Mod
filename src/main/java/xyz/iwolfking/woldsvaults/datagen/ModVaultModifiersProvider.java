@@ -3,6 +3,7 @@ package xyz.iwolfking.woldsvaults.datagen;
 import com.cursedcauldron.wildbackport.common.registry.WBMobEffects;
 import com.github.alexthe666.alexsmobs.effect.AMEffectRegistry;
 import com.github.alexthe666.alexsmobs.entity.AMEntityRegistry;
+import com.google.gson.JsonArray;
 import com.google.gson.annotations.SerializedName;
 import iskallia.vault.VaultMod;
 import iskallia.vault.block.PlaceholderBlock;
@@ -126,6 +127,12 @@ public class ModVaultModifiersProvider extends AbstractVaultModifierProvider {
             playerEffect(modifierBuilder, VaultMod.id("jumpy_deluxe"), MobEffects.JUMP.getRegistryName(), 4, "Jumpy Deluxe", "#e6fbfa", "+4 Jump Boost", "+%d Jump Boost", VaultMod.id("gui/modifiers/springy"));
             playerEffect(modifierBuilder, VaultMod.id("tailwind"), MobEffects.MOVEMENT_SPEED.getRegistryName(), 3, "Tailwind", "#fbed3f", "+3 Speed", "+%d Speed", VaultMod.id("gui/modifiers/speed"));
             playerEffect(modifierBuilder, VaultMod.id("super_stronk"), MobEffects.DAMAGE_BOOST.getRegistryName(), 6, "Super Stronk", "#d73b46", "+6 Strength", "+%d Strength", VaultMod.id("gui/modifiers/stronk"));
+            playerEffect(modifierBuilder, WoldsVaults.id("unlucky_aura"), MobEffects.UNLUCK.getRegistryName(), 2, "Jinxed", "#5032a8", "You aren't feeling very lucky...", "+%d Unluck", VaultMod.id("gui/modifiers/impossible"));
+            playerEffect(modifierBuilder, WoldsVaults.id("doomed_aura"), MobEffects.UNLUCK.getRegistryName(), 6, "Doomed", "#5032a8", "It seems almost all the luck has been sucked out...", "+%d Unluck", VaultMod.id("gui/modifiers/impossible"));
+            playerEffect(modifierBuilder, WoldsVaults.id("super_lucky"), MobEffects.LUCK.getRegistryName(), 4, "Four-Leaf Clover", "#b3ff20", "You're feeling super lucky!", "+%d Luck", VaultMod.id("gui/modifiers/lucky"));
+
+            poolReferenceWeight(modifierBuilder, WoldsVaults.id("challenge_fortune_small"), resourceLocationBasicListBuilder -> resourceLocationBasicListBuilder.add(VaultMod.id("vault/rooms/challenge_rooms")), 3.0, "Challenge Vein", "#FF4500", "3x Challenge Room Chance", null, VaultMod.id("gui/modifiers/challenge_fortune"));
+            poolReferenceWeight(modifierBuilder, WoldsVaults.id("omega_fortune_small"), resourceLocationBasicListBuilder -> resourceLocationBasicListBuilder.add(VaultMod.id("vault/rooms/omega_rooms")), 4.0, "Omega Vein", "#6AFF00", "4x Omega Room Chance", null, VaultMod.id("gui/modifiers/omega_fortune"));
 
             inventoryRestore(modifierBuilder, VaultMod.id("map_afterlife"), false, 0.0F, 1.0F, false, "Map Afterlife", "#3ffb9c", "No item loss on death.", null, VaultMod.id("gui/modifiers/afterlife"));
             inventoryRestore(modifierBuilder, VaultMod.id("oneup"), false, 0.0F, 1.0F, false, "Spirit Restore", "#3ffb9c", "No item loss on death.", null, VaultMod.id("gui/modifiers/afterlife"));
@@ -169,7 +176,7 @@ public class ModVaultModifiersProvider extends AbstractVaultModifierProvider {
 
             entityEffect(modifierBuilder, WoldsVaults.id("regenerating_mobs"), EMPTY_ENTITY_PREDICATE, MobEffects.REGENERATION.getRegistryName(), 5, 0.1F, "Regenerating Mobs", "#a996ca", "Mobs in this vault gain Regeneration V 10% of the time", "Mobs in this vault gain Regeneration some of the time", VaultMod.id("gui/modifiers/chunky"));
             entityEffect(modifierBuilder, WoldsVaults.id("resistant_mobs"),  EMPTY_ENTITY_PREDICATE, MobEffects.DAMAGE_RESISTANCE.getRegistryName(), 2, 0.1F, "Resistant Mobs", "#a996ca", "Mobs in this vault gain Resistance II 10% of the time", "Mobs in this vault gain Resistance some of the time", VaultMod.id("gui/modifiers/resistant_mobs"));
-            entityEffect(modifierBuilder, WoldsVaults.id("phantasmal_mobs"),  EMPTY_ENTITY_PREDICATE, MobEffects.INVISIBILITY.getRegistryName(), 0, 0.1F, "Resistant Mobs", "#a996ca", "Mobs in this vault gain Invisibility 10% of the time", "Mobs in this vault gain Invisibility some of the time", VaultMod.id("gui/modifiers/phantasmal_mobs"));
+            entityEffect(modifierBuilder, WoldsVaults.id("phantasmal_mobs"),  EMPTY_ENTITY_PREDICATE, MobEffects.INVISIBILITY.getRegistryName(), 0, 0.1F, "Phantasmal Mobs", "#a996ca", "Mobs in this vault gain Invisibility 10% of the time", "Mobs in this vault gain Invisibility some of the time", VaultMod.id("gui/modifiers/phantasmal_mobs"));
             entityEffect(modifierBuilder, WoldsVaults.id("fleet_footed_mobs"), EMPTY_ENTITY_PREDICATE, MobEffects.MOVEMENT_SPEED.getRegistryName(), 3, 0.1F, "Fleet Footed Mobs", "#a996ca", "Mobs in this vault gain Speed III 10% of the time", "Mobs in this vault gain Speed some of the time", VaultMod.id("gui/modifiers/fleetfooted_mobs"));
             entityEffect(modifierBuilder, VaultMod.id("big_mobs"),  EMPTY_ENTITY_PREDICATE, xyz.iwolfking.woldsvaults.init.ModEffects.GROWING.getRegistryName(), 1, 0.1F, "Maximized", "#a996ca", "Mobs in this vault gain Growing II 10% of the time", "Mobs in this vault gain Growing some of the time", VaultMod.id("gui/modifiers/chunky"));
             entityEffect(modifierBuilder, VaultMod.id("chungus"),  EMPTY_ENTITY_PREDICATE, xyz.iwolfking.woldsvaults.init.ModEffects.GROWING.getRegistryName(), 1, 1.0F, "Big Chungus", "#a996ca", "Mobs in this vault gain Growing II 100% of the time", "Mobs in this vault gain Growing some of the time", VaultMod.id("gui/modifiers/chunky"));
@@ -666,6 +673,9 @@ public class ModVaultModifiersProvider extends AbstractVaultModifierProvider {
                     "Injects a set of Omega rewards into the completion crate", WoldsVaults.id("gui/modifiers/omega_crate_tier"));
             hyperMarker(modifierBuilder, WoldsVaults.id("greedy_crate_tier"), "Greedy Crate Tier", "#ffd24d",
                     "+100% Greed Coins in the completion crate", WoldsVaults.id("gui/modifiers/greedy_crate_tier"));
+            empty(modifierBuilder, WoldsVaults.id("radar"), "Radar", "#ff4545",
+                    "Mob radar is online — Ghost Walk, Spirit Walk and Shadow Cloak cannot hide you", null,
+                    WoldsVaults.id("gui/modifiers/radar"));
             modifierBuilder.type(WoldsVaults.id("modifier_type/hyper_escalation").toString(), (typeBuilder) -> typeBuilder.modifier(WoldsVaults.id("hyper").toString(), (modifierEntryBuilder) -> {
                 modifierEntryBuilder.property("statFactor", 0.0F);
                 modifierEntryBuilder.property("speedPerStack", 0.0F);
@@ -707,6 +717,20 @@ public class ModVaultModifiersProvider extends AbstractVaultModifierProvider {
     public static void enchantedElixirEventAmount(ModifierBuilder builder, ResourceLocation modifierId, int count, String name, String color, String description, String formattedDescription, ResourceLocation icon) {
         builder.type(WoldsVaults.id("modifier_type/enchanted_elixir_event_count").toString(), (typeBuilder) -> typeBuilder.modifier(modifierId.toString(), (modifierEntryBuilder) -> {
             modifierEntryBuilder.property("count", count);
+            createModifierDisplay(modifierEntryBuilder, name, color, description, formattedDescription, icon);
+        }));
+    }
+
+    public static void poolReferenceWeight(ModifierBuilder builder, ResourceLocation modifierId, Consumer<BasicListBuilder<ResourceLocation>> referencesBuilderConsumer, double weightMultiplier, String name, String color, String description, String formattedDescription, ResourceLocation icon) {
+        builder.type(VaultMod.id("modifier_type/pool_reference_weight").toString(), (typeBuilder) -> typeBuilder.modifier(modifierId.toString(), (modifierEntryBuilder) -> {
+            JsonArray references = new JsonArray();
+            BasicListBuilder<ResourceLocation> listBuilder = new BasicListBuilder<>();
+            referencesBuilderConsumer.accept(listBuilder);
+            listBuilder.build().forEach(resourceLocation -> {
+                references.add(resourceLocation.toString());
+            });
+            modifierEntryBuilder.property("references", references);
+            modifierEntryBuilder.property("weightMultiplier", weightMultiplier);
             createModifierDisplay(modifierEntryBuilder, name, color, description, formattedDescription, icon);
         }));
     }

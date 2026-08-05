@@ -125,6 +125,9 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModEntities.STAR_DEVOURER_ENTITY, "Star Beast");
         add(ModEntities.SINGULARITY_CREEPER, "Singularity Creeper");
         add(ModEntities.CUSTOM_FANGS, "Fangs");
+        add(iskallia.vault.init.ModEntities.NECROMANCY_SKELETON, "Skeleton Minion");
+        add(iskallia.vault.init.ModEntities.NECROMANCY_GOLEM, "Golem Minion");
+        add(iskallia.vault.init.ModEntities.NECROMANCY_BOLT, "Necromancy Bolt");
         add(ModItems.GREED_TREE_RESET_ITEM, "Greed Infused Neuralizer");
         add(ModItems.BLUE_VAULT_ESSENCE, "Blue Vault Essence");
         add(ModItems.GREEN_VAULT_ESSENCE, "Green Vault Essence");
@@ -401,6 +404,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add("entity.woldsvaults.hostile_pig", "Aggressive Pig");
         add("entity.woldsvaults.cranberry_slime", "Cranberry Sauce Slime");
         add("entity.woldsvaults.haturkin", "Haturkin");
+        add("entity.woldsvaults.magic_missile", "Magic Missile");
+        add("death.attack.woldsvaults.magic_missile", "%1$s was blown apart by %2$s's Magic Missile");
         add("item.woldsvaults.wold_spawn_egg", "Wold Spawn Egg");
         add("item.woldsvaults.boogieman_spawn_egg", "Boogieman Spawn Egg");
         add("item.woldsvaults.monster_eye_spawn_egg", "Monster Eye Spawn Egg");
