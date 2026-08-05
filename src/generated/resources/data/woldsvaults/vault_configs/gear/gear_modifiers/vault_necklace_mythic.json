@@ -109,41 +109,6 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_treasure_sense",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Treasure_Sense",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Treasure_Sense",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Treasure_Sense",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
         "identifier": "the_vault:u_talent_level_methodical",
         "tags": [],
         "tiers": [
@@ -171,6 +136,41 @@
             "weight": 200,
             "value": {
               "talentKey": "Methodical",
+              "levelChange": 4
+            }
+          }
+        ]
+      },
+      {
+        "attribute": "the_vault:added_talent_level",
+        "group": "ModTalentLevel",
+        "identifier": "the_vault:u_talent_level_arthropod_mastery",
+        "tags": [],
+        "tiers": [
+          {
+            "minLevel": 0,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Arthropod_Mastery",
+              "levelChange": 2
+            }
+          },
+          {
+            "minLevel": 50,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Arthropod_Mastery",
+              "levelChange": 3
+            }
+          },
+          {
+            "minLevel": 90,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Arthropod_Mastery",
               "levelChange": 4
             }
           }
@@ -214,41 +214,6 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_fanged_strike",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Fanged_Strike",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Fanged_Strike",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Fanged_Strike",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
         "identifier": "the_vault:u_talent_level_depleted",
         "tags": [],
         "tiers": [
@@ -276,6 +241,41 @@
             "weight": 200,
             "value": {
               "talentKey": "Depleted",
+              "levelChange": 4
+            }
+          }
+        ]
+      },
+      {
+        "attribute": "the_vault:added_talent_level",
+        "group": "ModTalentLevel",
+        "identifier": "the_vault:u_talent_level_nether_mastery",
+        "tags": [],
+        "tiers": [
+          {
+            "minLevel": 0,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Nether_Mastery",
+              "levelChange": 2
+            }
+          },
+          {
+            "minLevel": 50,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Nether_Mastery",
+              "levelChange": 3
+            }
+          },
+          {
+            "minLevel": 90,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Nether_Mastery",
               "levelChange": 4
             }
           }
@@ -319,7 +319,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_mana_harvest",
+        "identifier": "the_vault:u_talent_level_bloodthirst",
         "tags": [],
         "tiers": [
           {
@@ -327,7 +327,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Mana_Harvest",
+              "talentKey": "Bloodthirst",
               "levelChange": 2
             }
           },
@@ -336,7 +336,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Mana_Harvest",
+              "talentKey": "Bloodthirst",
               "levelChange": 3
             }
           },
@@ -345,7 +345,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Mana_Harvest",
+              "talentKey": "Bloodthirst",
               "levelChange": 4
             }
           }
@@ -459,6 +459,76 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
+        "identifier": "the_vault:u_talent_level_javelin_conduct",
+        "tags": [],
+        "tiers": [
+          {
+            "minLevel": 0,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Javelin_Conduct",
+              "levelChange": 2
+            }
+          },
+          {
+            "minLevel": 50,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Javelin_Conduct",
+              "levelChange": 3
+            }
+          },
+          {
+            "minLevel": 90,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Javelin_Conduct",
+              "levelChange": 4
+            }
+          }
+        ]
+      },
+      {
+        "attribute": "the_vault:added_talent_level",
+        "group": "ModTalentLevel",
+        "identifier": "the_vault:u_talent_level_masteries",
+        "tags": [],
+        "tiers": [
+          {
+            "minLevel": 0,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Masteries",
+              "levelChange": 2
+            }
+          },
+          {
+            "minLevel": 50,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Masteries",
+              "levelChange": 3
+            }
+          },
+          {
+            "minLevel": 90,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Masteries",
+              "levelChange": 4
+            }
+          }
+        ]
+      },
+      {
+        "attribute": "the_vault:added_talent_level",
+        "group": "ModTalentLevel",
         "identifier": "the_vault:u_talent_level_cleave",
         "tags": [],
         "tiers": [
@@ -494,7 +564,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_clean_escape",
+        "identifier": "the_vault:u_talent_level_javelin_throw_power",
         "tags": [],
         "tiers": [
           {
@@ -502,7 +572,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Clean_Escape",
+              "talentKey": "Javelin_Throw_Power",
               "levelChange": 2
             }
           },
@@ -511,7 +581,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Clean_Escape",
+              "talentKey": "Javelin_Throw_Power",
               "levelChange": 3
             }
           },
@@ -520,7 +590,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Clean_Escape",
+              "talentKey": "Javelin_Throw_Power",
               "levelChange": 4
             }
           }
@@ -564,41 +634,6 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_execution_strike",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Execution_Strike",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Execution_Strike",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Execution_Strike",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
         "identifier": "the_vault:u_talent_level_daze",
         "tags": [],
         "tiers": [
@@ -626,146 +661,6 @@
             "weight": 200,
             "value": {
               "talentKey": "Daze",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_medic",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Medic",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Medic",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Medic",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_horde_mastery",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Horde_Mastery",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Horde_Mastery",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Horde_Mastery",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_quickening",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Quickening",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Quickening",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Quickening",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_heart_fragments",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Heart_Fragments",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Heart_Fragments",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Heart_Fragments",
               "levelChange": 4
             }
           }
@@ -844,7 +739,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_ransack",
+        "identifier": "the_vault:u_talent_level_javelin_talent",
         "tags": [],
         "tiers": [
           {
@@ -852,7 +747,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Ransack",
+              "talentKey": "Javelin_Talent",
               "levelChange": 2
             }
           },
@@ -861,7 +756,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Ransack",
+              "talentKey": "Javelin_Talent",
               "levelChange": 3
             }
           },
@@ -870,7 +765,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Ransack",
+              "talentKey": "Javelin_Talent",
               "levelChange": 4
             }
           }
@@ -906,76 +801,6 @@
             "weight": 200,
             "value": {
               "talentKey": "Arcana",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_stack_master",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Stack_Master",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Stack_Master",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Stack_Master",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_mind_meld",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Mind_Meld",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Mind_Meld",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Mind_Meld",
               "levelChange": 4
             }
           }
@@ -1089,7 +914,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_battle_trance",
+        "identifier": "the_vault:u_talent_level_illager_mastery",
         "tags": [],
         "tiers": [
           {
@@ -1097,7 +922,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Battle_Trance",
+              "talentKey": "Illager_Mastery",
               "levelChange": 2
             }
           },
@@ -1106,7 +931,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Battle_Trance",
+              "talentKey": "Illager_Mastery",
               "levelChange": 3
             }
           },
@@ -1115,77 +940,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Battle_Trance",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_arcane_strike",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Arcane_Strike",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Arcane_Strike",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Arcane_Strike",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_trap_disarm",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Trap_Disarm",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Trap_Disarm",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Trap_Disarm",
+              "talentKey": "Illager_Mastery",
               "levelChange": 4
             }
           }
@@ -1264,7 +1019,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_assassin_mastery",
+        "identifier": "the_vault:u_talent_level_javelin_frugal",
         "tags": [],
         "tiers": [
           {
@@ -1272,7 +1027,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Assassin_Mastery",
+              "talentKey": "Javelin_Frugal",
               "levelChange": 2
             }
           },
@@ -1281,7 +1036,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Assassin_Mastery",
+              "talentKey": "Javelin_Frugal",
               "levelChange": 3
             }
           },
@@ -1290,42 +1045,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Assassin_Mastery",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_healthy_elixir",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Healthy_Elixir",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Healthy_Elixir",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Healthy_Elixir",
+              "talentKey": "Javelin_Frugal",
               "levelChange": 4
             }
           }
@@ -1369,6 +1089,41 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
+        "identifier": "the_vault:u_talent_level_lucky_hit",
+        "tags": [],
+        "tiers": [
+          {
+            "minLevel": 0,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Lucky_Hit",
+              "levelChange": 2
+            }
+          },
+          {
+            "minLevel": 50,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Lucky_Hit",
+              "levelChange": 3
+            }
+          },
+          {
+            "minLevel": 90,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Lucky_Hit",
+              "levelChange": 4
+            }
+          }
+        ]
+      },
+      {
+        "attribute": "the_vault:added_talent_level",
+        "group": "ModTalentLevel",
         "identifier": "the_vault:u_talent_level_purist",
         "tags": [],
         "tiers": [
@@ -1396,41 +1151,6 @@
             "weight": 200,
             "value": {
               "talentKey": "Purist",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_dungeon_mastery",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Dungeon_Mastery",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Dungeon_Mastery",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Dungeon_Mastery",
               "levelChange": 4
             }
           }
@@ -1474,41 +1194,6 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_lightning_stun",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lightning_Stun",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lightning_Stun",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lightning_Stun",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
         "identifier": "the_vault:u_talent_level_berserking",
         "tags": [],
         "tiers": [
@@ -1544,7 +1229,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_voltaic_impact",
+        "identifier": "the_vault:u_talent_level_lightning_stun",
         "tags": [],
         "tiers": [
           {
@@ -1552,7 +1237,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Voltaic_Impact",
+              "talentKey": "Lightning_Stun",
               "levelChange": 2
             }
           },
@@ -1561,7 +1246,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Voltaic_Impact",
+              "talentKey": "Lightning_Stun",
               "levelChange": 3
             }
           },
@@ -1570,7 +1255,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Voltaic_Impact",
+              "talentKey": "Lightning_Stun",
               "levelChange": 4
             }
           }
@@ -1579,7 +1264,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_momentum_engine",
+        "identifier": "the_vault:u_talent_level_discipline",
         "tags": [],
         "tiers": [
           {
@@ -1587,7 +1272,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Momentum_Engine",
+              "talentKey": "Discipline",
               "levelChange": 2
             }
           },
@@ -1596,7 +1281,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Momentum_Engine",
+              "talentKey": "Discipline",
               "levelChange": 3
             }
           },
@@ -1605,7 +1290,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Momentum_Engine",
+              "talentKey": "Discipline",
               "levelChange": 4
             }
           }
@@ -1649,41 +1334,6 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_lunge",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lunge",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lunge",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lunge",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
         "identifier": "the_vault:u_talent_level_toxic_reaction",
         "tags": [],
         "tiers": [
@@ -1711,41 +1361,6 @@
             "weight": 200,
             "value": {
               "talentKey": "Toxic_Reaction",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_executioner",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Executioner",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Executioner",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Executioner",
               "levelChange": 4
             }
           }
@@ -1789,7 +1404,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_ethereal",
+        "identifier": "the_vault:u_talent_level_undead_mastery",
         "tags": [],
         "tiers": [
           {
@@ -1797,7 +1412,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Ethereal",
+              "talentKey": "Undead_Mastery",
               "levelChange": 2
             }
           },
@@ -1806,7 +1421,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Ethereal",
+              "talentKey": "Undead_Mastery",
               "levelChange": 3
             }
           },
@@ -1815,7 +1430,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Ethereal",
+              "talentKey": "Undead_Mastery",
               "levelChange": 4
             }
           }
@@ -1894,6 +1509,41 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
+        "identifier": "the_vault:u_talent_level_javelin_damage",
+        "tags": [],
+        "tiers": [
+          {
+            "minLevel": 0,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Javelin_Damage",
+              "levelChange": 2
+            }
+          },
+          {
+            "minLevel": 50,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Javelin_Damage",
+              "levelChange": 3
+            }
+          },
+          {
+            "minLevel": 90,
+            "maxLevel": -1,
+            "weight": 200,
+            "value": {
+              "talentKey": "Javelin_Damage",
+              "levelChange": 4
+            }
+          }
+        ]
+      },
+      {
+        "attribute": "the_vault:added_talent_level",
+        "group": "ModTalentLevel",
         "identifier": "the_vault:u_talent_level_last_stand",
         "tags": [],
         "tiers": [
@@ -1929,7 +1579,7 @@
       {
         "attribute": "the_vault:added_talent_level",
         "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_healthy_harvest",
+        "identifier": "the_vault:u_talent_level_tank_mastery",
         "tags": [],
         "tiers": [
           {
@@ -1937,7 +1587,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Healthy_Harvest",
+              "talentKey": "Tank_Mastery",
               "levelChange": 2
             }
           },
@@ -1946,7 +1596,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Healthy_Harvest",
+              "talentKey": "Tank_Mastery",
               "levelChange": 3
             }
           },
@@ -1955,77 +1605,7 @@
             "maxLevel": -1,
             "weight": 200,
             "value": {
-              "talentKey": "Healthy_Harvest",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_blood_rush",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Blood_Rush",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Blood_Rush",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Blood_Rush",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_potent_elixir",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Potent_Elixir",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Potent_Elixir",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Potent_Elixir",
+              "talentKey": "Tank_Mastery",
               "levelChange": 4
             }
           }
@@ -2096,41 +1676,6 @@
             "weight": 200,
             "value": {
               "talentKey": "Strength",
-              "levelChange": 4
-            }
-          }
-        ]
-      },
-      {
-        "attribute": "the_vault:added_talent_level",
-        "group": "ModTalentLevel",
-        "identifier": "the_vault:u_talent_level_lingering_fumes",
-        "tags": [],
-        "tiers": [
-          {
-            "minLevel": 0,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lingering_Fumes",
-              "levelChange": 2
-            }
-          },
-          {
-            "minLevel": 50,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lingering_Fumes",
-              "levelChange": 3
-            }
-          },
-          {
-            "minLevel": 90,
-            "maxLevel": -1,
-            "weight": 200,
-            "value": {
-              "talentKey": "Lingering_Fumes",
               "levelChange": 4
             }
           }
