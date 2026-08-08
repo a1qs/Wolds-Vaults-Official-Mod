@@ -11,6 +11,18 @@
           "icon": "woldsvaults:gui/abilities/concentrate"
         }
       }
+    },
+    "Colossus": {
+      "x": 245,
+      "y": 134,
+      "specializationStyles": {
+        "Colossus_Base": {
+          "icon": "woldsvaults:gui/abilities/colossus"
+        },
+        "Sneaky_Getaway": {
+          "icon": "woldsvaults:gui/abilities/sneaky_getaway"
+        }
+      }
     }
   },
   "labels": [],

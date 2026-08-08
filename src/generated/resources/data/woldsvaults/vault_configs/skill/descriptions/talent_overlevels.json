@@ -37,34 +37,6 @@
         "color": "#FFEB07"
       },
       {
-        "text": "\n5 "
-      },
-      {
-        "text": "25%",
-        "color": "#FFEB07"
-      },
-      {
-        "text": "\n6 "
-      },
-      {
-        "text": "30%",
-        "color": "#FFEB07"
-      },
-      {
-        "text": "\n7 "
-      },
-      {
-        "text": "35%",
-        "color": "#FFEB07"
-      },
-      {
-        "text": "\n8 "
-      },
-      {
-        "text": "40%",
-        "color": "#FFEB07"
-      },
-      {
         "text": "\n\n"
       },
       {
@@ -101,24 +73,31 @@
         "color": "#FFEB07"
       },
       {
-        "text": " of causing them to get "
+        "text": " to "
       },
       {
-        "text": "Glacial Imprisoned",
+        "text": "glacially imprison",
         "color": "#23D2BB"
       },
       {
-        "text": " for "
+        "text": " it for "
       },
       {
         "text": "3 seconds",
-        "color": "#7024AC"
+        "color": "#2FE1FA"
       },
       {
-        "text": ", and if hit again they will shatter and die instantly, regardless of their health.\n\n1 "
+        "text": ", causing the next valid hit to shatter and kill most mobs.\n\n"
       },
       {
-        "text": "2,5%",
+        "text": "Chance",
+        "color": "#FFEB07"
+      },
+      {
+        "text": "\n1 "
+      },
+      {
+        "text": "2.5%",
         "color": "#FFEB07"
       },
       {
@@ -132,39 +111,39 @@
         "text": "\n3 "
       },
       {
-        "text": "7,5%",
+        "text": "7.5%",
         "color": "#FFEB07"
       },
       {
-        "text": " \n4 "
+        "text": "\n4 "
       },
       {
         "text": "10%",
         "color": "#FFEB07"
       },
       {
-        "text": " \n5 "
+        "text": "\n5 "
       },
       {
-        "text": "12,5%",
+        "text": "12.5%",
         "color": "#FFEB07"
       },
       {
-        "text": " \n6 "
+        "text": "\n6 "
       },
       {
         "text": "15%",
         "color": "#FFEB07"
       },
       {
-        "text": " \n7 "
+        "text": "\n7 "
       },
       {
-        "text": "17,5%",
+        "text": "17.5%",
         "color": "#FFEB07"
       },
       {
-        "text": " \n8 "
+        "text": "\n8 "
       },
       {
         "text": "20%",
@@ -177,7 +156,7 @@
         "text": "Overlevels of the "
       },
       {
-        "text": "Frostbite",
+        "text": "Frost Bite",
         "color": "gold"
       },
       {
@@ -200,31 +179,31 @@
         "color": "#FF00CB"
       },
       {
-        "text": "\n\n1 "
+        "text": ".\n\n1 "
       },
       {
-        "text": "+3",
+        "text": "+8",
         "color": "#FF00CB"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+6",
+        "text": "+16",
         "color": "#FF00CB"
       },
       {
         "text": "\n3 "
       },
       {
-        "text": "+9",
+        "text": "+24",
         "color": "#FF00CB"
       },
       {
         "text": "\n4 "
       },
       {
-        "text": "+12",
+        "text": "+32",
         "color": "#FF00CB"
       },
       {
@@ -246,6 +225,98 @@
       {
         "text": "+8 Ability Power",
         "color": "#FF00CB"
+      }
+    ],
+    "Battle_Trance": [
+      {
+        "text": "Hitting a mob grants "
+      },
+      {
+        "text": "+3% increased Attack Damage",
+        "color": "#FF6B00"
+      },
+      {
+        "text": ". This effect can "
+      },
+      {
+        "text": "stack",
+        "color": "#FFEB07"
+      },
+      {
+        "text": " and lasts for a short time.\n\n1 "
+      },
+      {
+        "text": "4 Max Stacks",
+        "color": "#FFEB07"
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "4 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "6 Max Stacks",
+        "color": "#FFEB07"
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "6 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "8 Max Stacks",
+        "color": "#FFEB07"
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "8 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": "\n4 "
+      },
+      {
+        "text": "10 Max Stacks",
+        "color": "#FFEB07"
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "10 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Battle Trance",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "adds one additional max "
+      },
+      {
+        "text": "stack",
+        "color": "#36ffa7"
       }
     ],
     "Stoneskin": [
@@ -338,28 +409,28 @@
         "text": " max mana.\n\n1 "
       },
       {
-        "text": "+20%",
+        "text": "+40%",
         "color": "#7DF587"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+40%",
+        "text": "+60%",
         "color": "#7DF587"
       },
       {
         "text": "\n3 "
       },
       {
-        "text": "+60%",
+        "text": "+80%",
         "color": "#7DF587"
       },
       {
         "text": "\n4 "
       },
       {
-        "text": "+80%",
+        "text": "+100%",
         "color": "#7DF587"
       },
       {
@@ -385,45 +456,52 @@
     ],
     "Treasure_Seeker": [
       {
-        "text": "Gain "
+        "text": "Killing vault mobs grants a 6s stack of "
       },
       {
         "text": "increased item rarity",
         "color": "#EAFF00"
       },
       {
-        "text": " while being below "
+        "text": ". Taking damage removes "
       },
       {
-        "text": "20% health",
+        "text": "1 stack",
+        "color": "#7DF587"
+      },
+      {
+        "text": ". Maximum "
+      },
+      {
+        "text": "5 stacks",
         "color": "#7DF587"
       },
       {
         "text": ".\n\n1 "
       },
       {
-        "text": "+5%",
+        "text": "+4% per stack, +20% max",
         "color": "#EAFF00"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+10%",
+        "text": "+6% per stack, +30% max",
         "color": "#EAFF00"
       },
       {
         "text": "\n3 "
       },
       {
-        "text": "+15%",
+        "text": "+8% per stack, +40% max",
         "color": "#EAFF00"
       },
       {
         "text": "\n4 "
       },
       {
-        "text": "+20%",
+        "text": "+10% per stack, 50% max",
         "color": "#EAFF00"
       },
       {
@@ -450,40 +528,97 @@
         "color": "#36ffa7"
       }
     ],
-    "Depleted": [
+    "Trap_Disarm": [
       {
-        "text": "Gain "
+        "text": "Increases your chance to "
       },
       {
-        "text": "extra damage ",
+        "text": "disarm trapped chests",
+        "color": "#7F42FC"
+      },
+      {
+        "text": " inside Vaults.\n\n1 "
+      },
+      {
+        "text": "+10%",
+        "color": "#7F42FC"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "+20%",
+        "color": "#7F42FC"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "+30%",
+        "color": "#7F42FC"
+      },
+      {
+        "text": "\n4 "
+      },
+      {
+        "text": "+40%",
+        "color": "#7F42FC"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Trap Disarm",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+10% Trap Disarm Chance",
+        "color": "#4800FF"
+      }
+    ],
+    "Depleted": [
+      {
+        "text": "Deal increased "
+      },
+      {
+        "text": "damage",
         "color": "#C23627"
       },
       {
-        "text": "while below "
+        "text": " while below "
       },
       {
         "text": "20%",
         "color": "#0353D7"
       },
       {
-        "text": " max mana.\n\n1 "
+        "text": " max mana. Works with attacks and abilities.\n\n1 "
       },
       {
-        "text": "+40%",
+        "text": "+25%",
         "color": "#C23627"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+60%",
+        "text": "+50%",
         "color": "#C23627"
       },
       {
         "text": "\n3 "
       },
       {
-        "text": "+80%",
+        "text": "+75%",
         "color": "#C23627"
       },
       {
@@ -516,46 +651,53 @@
     ],
     "Haste": [
       {
-        "text": "Increases your "
+        "text": "Increases your raw "
       },
       {
-        "text": "mining speed",
+        "text": "Mining Speed",
         "color": "#47B8F5"
       },
       {
-        "text": " by applying the "
+        "text": " by a percentage.\n\n1 "
       },
       {
-        "text": "Haste effect ",
-        "color": "green"
-      },
-      {
-        "text": "permanently.\n\nEvery level of the Haste effect increases mining speed by "
-      },
-      {
-        "text": "20%",
+        "text": "+15%",
         "color": "#47B8F5"
-      },
-      {
-        "text": ".\n\n1 "
-      },
-      {
-        "text": "+1",
-        "color": "green"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+2",
-        "color": "green"
+        "text": "+30%",
+        "color": "#47B8F5"
       },
       {
         "text": "\n3 "
       },
       {
-        "text": "+3",
-        "color": "green"
+        "text": "+45%",
+        "color": "#47B8F5"
+      },
+      {
+        "text": "\n4 "
+      },
+      {
+        "text": "+60%",
+        "color": "#47B8F5"
+      },
+      {
+        "text": "\n5 "
+      },
+      {
+        "text": "+75%",
+        "color": "#47B8F5"
+      },
+      {
+        "text": "\n6 "
+      },
+      {
+        "text": "+90%",
+        "color": "#47B8F5"
       },
       {
         "text": "\n\n"
@@ -580,45 +722,52 @@
     ],
     "Bountiful_Harvest": [
       {
-        "text": "Gain "
+        "text": "Killing vault mobs grants a 6s stack of "
       },
       {
         "text": "increased item quantity",
         "color": "#FFAA3D"
       },
       {
-        "text": " while being below "
+        "text": ". Taking damage removes "
       },
       {
-        "text": "20% health",
+        "text": "1 stack",
+        "color": "#7DF587"
+      },
+      {
+        "text": ". Maximum "
+      },
+      {
+        "text": "5 stacks",
         "color": "#7DF587"
       },
       {
         "text": ".\n\n1 "
       },
       {
-        "text": "+5%",
+        "text": "+4% per stack, +20% max",
         "color": "#FFAA3D"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+10%",
+        "text": "+6% per stack, +30% max",
         "color": "#FFAA3D"
       },
       {
         "text": "\n3 "
       },
       {
-        "text": "+15%",
+        "text": "+8% per stack, +40% max",
         "color": "#FFAA3D"
       },
       {
         "text": "\n4 "
       },
       {
-        "text": "+20%",
+        "text": "+10% per stack, +50% max",
         "color": "#FFAA3D"
       },
       {
@@ -647,45 +796,45 @@
     ],
     "Purist": [
       {
-        "text": "Deal "
+        "text": "Gain "
       },
       {
-        "text": "extra damage",
+        "text": "increased damage",
         "color": "#C23627"
       },
       {
-        "text": " based on the amount of "
+        "text": " for each equipped "
       },
       {
         "text": "Scrappy",
         "color": "#343434"
       },
       {
-        "text": " armor pieces you wear.\n1 "
+        "text": " armor piece. Works with attacks and abilities. Helmet, Chestplate, Leggings and Boots can each count once.\n\n1 "
       },
       {
-        "text": "+2.5% damage per piece",
+        "text": "+10% damage per piece",
         "color": "#C23627"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+5% damage per piece",
+        "text": "+20% damage per piece",
         "color": "#C23627"
       },
       {
         "text": "\n3 "
       },
       {
-        "text": "+7.5% damage per piece",
+        "text": "+30% damage per piece",
         "color": "#C23627"
       },
       {
         "text": "\n4 "
       },
       {
-        "text": "+10% damage per piece",
+        "text": "+40% damage per piece",
         "color": "#C23627"
       },
       {
@@ -728,21 +877,21 @@
         "text": "with your hit.\n\n1 "
       },
       {
-        "text": "+150%",
+        "text": "+200%",
         "color": "#C23627"
       },
       {
-        "text": "\n2 "
+        "text": "\n\n2 "
       },
       {
-        "text": "+300%",
+        "text": "+240%",
         "color": "#C23627"
       },
       {
-        "text": "\n3 "
+        "text": "\n\n3 "
       },
       {
-        "text": "+450%",
+        "text": "+280%",
         "color": "#C23627"
       },
       {
@@ -766,93 +915,105 @@
         "color": "#C23627"
       }
     ],
+    "Mana_Harvest": [
+      {
+        "text": "Draws "
+      },
+      {
+        "text": "Mana",
+        "color": "#0353D7"
+      },
+      {
+        "text": " from the vault as you loot, restoring Mana whenever you open a "
+      },
+      {
+        "text": "chest",
+        "color": "#FFFF55"
+      },
+      {
+        "text": ".\n\n1 "
+      },
+      {
+        "text": "+1 Mana",
+        "color": "#0353D7"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "+2 Mana",
+        "color": "#0353D7"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "+3 Mana",
+        "color": "#0353D7"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Mana Harvest",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+1 Additional Mana",
+        "color": "#0353d7"
+      }
+    ],
     "Blight": [
       {
-        "text": "Apply "
+        "text": "Poisoned mobs deal "
       },
       {
-        "text": "Weakness",
-        "color": "#AFB477"
-      },
-      {
-        "text": " to your targets while hitting them, lowering their "
-      },
-      {
-        "text": "damage",
+        "text": "reduced damage",
         "color": "#C23627"
       },
       {
-        "text": " for a "
+        "text": " to you. Also works against mobs affected by "
       },
       {
-        "text": "duration",
-        "color": "#7024AC"
-      },
-      {
-        "text": " of time, if they are affected by "
-      },
-      {
-        "text": "Poison",
+        "text": "Poison Nova",
         "color": "#6FE95A"
       },
       {
         "text": ".\n\n1 "
       },
       {
-        "text": "-50%",
+        "text": "-15%",
         "color": "#C23627"
       },
       {
-        "text": " - "
+        "text": "\n2 "
       },
       {
-        "text": "5s",
-        "color": "#7024AC"
-      },
-      {
-        "text": " \n2 "
-      },
-      {
-        "text": "-60%",
+        "text": "-25%",
         "color": "#C23627"
       },
       {
-        "text": " - "
+        "text": "\n3 "
       },
       {
-        "text": "6s",
-        "color": "#7024AC"
-      },
-      {
-        "text": " \n3 "
-      },
-      {
-        "text": "-70%",
+        "text": "-35%",
         "color": "#C23627"
       },
       {
-        "text": " - "
+        "text": "\n4 "
       },
       {
-        "text": "7s",
-        "color": "#7024AC"
-      },
-      {
-        "text": " \n4 "
-      },
-      {
-        "text": "-80%",
+        "text": "-45%",
         "color": "#C23627"
-      },
-      {
-        "text": " - "
-      },
-      {
-        "text": "8s",
-        "color": "#7024AC"
-      },
-      {
-        "text": " "
       },
       {
         "text": "\n\n"
@@ -877,10 +1038,10 @@
     ],
     "Berserking": [
       {
-        "text": "Gain "
+        "text": "Deal increased "
       },
       {
-        "text": "extra damage",
+        "text": "damage",
         "color": "#C23627"
       },
       {
@@ -891,31 +1052,10 @@
         "color": "#7DF587"
       },
       {
-        "text": " max health.\n\n1 "
+        "text": " max health. Works with attacks and abilities.\n\n1 "
       },
       {
-        "text": "+20%",
-        "color": "#C23627"
-      },
-      {
-        "text": "\n2 "
-      },
-      {
-        "text": "+40%",
-        "color": "#C23627"
-      },
-      {
-        "text": "\n3 "
-      },
-      {
-        "text": "+60%",
-        "color": "#C23627"
-      },
-      {
-        "text": "\n4 "
-      },
-      {
-        "text": "+80%",
+        "text": "+100%",
         "color": "#C23627"
       },
       {
@@ -948,7 +1088,7 @@
         "color": "#0353D7"
       },
       {
-        "text": " while at full health.\n\n1 "
+        "text": " while above 80% max health.\n\n1 "
       },
       {
         "text": "+10%",
@@ -1029,11 +1169,18 @@
     ],
     "Lightning_Stun": [
       {
-        "text": "Gives you a "
+        "text": "Gives your "
+      },
+      {
+        "text": "Lightning Abilities",
+        "color": "#FFFB81"
+      },
+      {
+        "text": " a "
       },
       {
         "text": "chance",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
         "text": " to "
@@ -1043,60 +1190,60 @@
         "color": "#19A6E4"
       },
       {
-        "text": " mobs hit by Lightning Abilities.\n\n1: "
+        "text": " enemies.\n\n1 "
       },
       {
         "text": "5%",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
-        "text": "\n2: "
+        "text": "\n2 "
       },
       {
         "text": "10%",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
-        "text": "\n3: "
+        "text": "\n3 "
       },
       {
         "text": "15%",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
-        "text": "\n4: "
+        "text": "\n4 "
       },
       {
         "text": "20%",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
-        "text": "\n5: "
+        "text": "\n5 "
       },
       {
         "text": "25%",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
-        "text": "\n6: "
+        "text": "\n6 "
       },
       {
         "text": "30%",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
-        "text": "\n7: "
+        "text": "\n7 "
       },
       {
         "text": "35%",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
-        "text": "\n8: "
+        "text": "\n8 "
       },
       {
         "text": "40%",
-        "color": "yellow"
+        "color": "#FFFF55"
       },
       {
         "text": "\n\n"
@@ -1105,7 +1252,7 @@
         "text": "Overlevels of the "
       },
       {
-        "text": "Lightning Finesse",
+        "text": "Lightning Mastery",
         "color": "gold"
       },
       {
@@ -1138,21 +1285,21 @@
         "text": " with your hit, as long as your hit deals the same amount of damage, percentage wise, to the target's total health.\n\n1 "
       },
       {
-        "text": "10%",
+        "text": "4%",
         "color": "#CF0000"
       },
       {
-        "text": "\n2 "
+        "text": "\n\n2 "
       },
       {
-        "text": "20%",
+        "text": "8%",
         "color": "#CF0000"
       },
       {
-        "text": "\n3 "
+        "text": "\n\n3 "
       },
       {
-        "text": "30%",
+        "text": "12%",
         "color": "#CF0000"
       },
       {
@@ -1176,41 +1323,98 @@
         "color": "#C23627"
       }
     ],
+    "Voltaic_Impact": [
+      {
+        "text": "Shocked mobs deal "
+      },
+      {
+        "text": "increased damage",
+        "color": "#FFFB81"
+      },
+      {
+        "text": " when they collide with other mobs.\n\n1 "
+      },
+      {
+        "text": "+25%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "+50%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "+75%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n4 "
+      },
+      {
+        "text": "+100%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Voltaic Impact",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+20% Additional Damage",
+        "color": "#C23627"
+      }
+    ],
     "Speed": [
       {
         "text": "Increases your "
       },
       {
-        "text": "movement speed",
-        "color": "#F6CD0E"
-      },
-      {
-        "text": " by applying the "
-      },
-      {
-        "text": "speed effect ",
-        "color": "green"
-      },
-      {
-        "text": "permanently.\n\nEvery level of the speed effect increases movement speed by "
-      },
-      {
-        "text": "20%",
+        "text": "Movement Speed",
         "color": "#F6CD0E"
       },
       {
         "text": ".\n\n1 "
       },
       {
-        "text": "+1",
-        "color": "green"
+        "text": "+10%",
+        "color": "#F6CD0E"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+2",
-        "color": "green"
+        "text": "+20%",
+        "color": "#F6CD0E"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "+30%",
+        "color": "#F6CD0E"
+      },
+      {
+        "text": "\n4 "
+      },
+      {
+        "text": "+40%",
+        "color": "#F6CD0E"
       },
       {
         "text": "\n\n"
@@ -1252,21 +1456,7 @@
         "text": " in a 5 by 5 area around the target.\n\n1 "
       },
       {
-        "text": "50%",
-        "color": "#C23627"
-      },
-      {
-        "text": "\n2 "
-      },
-      {
-        "text": "65%",
-        "color": "#C23627"
-      },
-      {
-        "text": "\n3 "
-      },
-      {
-        "text": "80%",
+        "text": "75%",
         "color": "#C23627"
       },
       {
@@ -1290,23 +1480,87 @@
         "color": "#5ae09c"
       }
     ],
+    "Clean_Escape": [
+      {
+        "text": "After taking damage, gain "
+      },
+      {
+        "text": "Movement Speed",
+        "color": "#FFE068"
+      },
+      {
+        "text": " for "
+      },
+      {
+        "text": "10 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": ".\n\n1 "
+      },
+      {
+        "text": "+5%",
+        "color": "#FFE068"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "+10%",
+        "color": "#FFE068"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "+15%",
+        "color": "#FFE068"
+      },
+      {
+        "text": "\n4 "
+      },
+      {
+        "text": "+20%",
+        "color": "#FFE068"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Clean Escape",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+10% Movement Speed",
+        "color": "#ffe400"
+      }
+    ],
     "Daze": [
       {
         "text": "Deal increased "
       },
       {
-        "text": "damage ",
+        "text": "damage",
         "color": "#C23627"
       },
       {
-        "text": "to a "
+        "text": " to "
       },
       {
         "text": "stunned",
         "color": "#19A6E4"
       },
       {
-        "text": " mob per hit.\n\n1 "
+        "text": " mobs. Works with attacks and abilities.\n\n1 "
       },
       {
         "text": "+25%",
@@ -1359,11 +1613,11 @@
         "text": "Gain "
       },
       {
-        "text": "+2% Movement Speed",
+        "text": "+4% Movement Speed",
         "color": "#FFE068"
       },
       {
-        "text": " when killing a mob. This effect can "
+        "text": " when hitting a mob. This effect can "
       },
       {
         "text": "stack",
@@ -1449,37 +1703,218 @@
         "color": "#36ffa7"
       }
     ],
+    "Executioner": [
+      {
+        "text": "Deal increased "
+      },
+      {
+        "text": "damage",
+        "color": "#C23627"
+      },
+      {
+        "text": " to mobs below "
+      },
+      {
+        "text": "50% health",
+        "color": "#7DF587"
+      },
+      {
+        "text": ". Works with attacks and abilities.\n\n1 "
+      },
+      {
+        "text": "+20%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "+40%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "+60%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Executioner",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+5% Additional Damage",
+        "color": "#C23627"
+      }
+    ],
+    "Ethereal": [
+      {
+        "text": "Your abilities have a "
+      },
+      {
+        "text": "chance",
+        "color": "#FFEB07"
+      },
+      {
+        "text": " to become "
+      },
+      {
+        "text": "Ethereal",
+        "color": "#1BDE8E"
+      },
+      {
+        "text": ", consuming "
+      },
+      {
+        "text": "no mana",
+        "color": "#0353D7"
+      },
+      {
+        "text": " when the cost is paid.\n\n1 "
+      },
+      {
+        "text": "10%",
+        "color": "#FFEB07"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "20%",
+        "color": "#FFEB07"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "30%",
+        "color": "#FFEB07"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Ethereal",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+3% Additional Chance",
+        "color": "#5ae09c"
+      }
+    ],
+    "Quickening": [
+      {
+        "text": "When you use an ability, you have a "
+      },
+      {
+        "text": "10%",
+        "color": "#FFEB07"
+      },
+      {
+        "text": " chance to immediately refund part of its "
+      },
+      {
+        "text": "Cooldown",
+        "color": "#E35F12"
+      },
+      {
+        "text": ".\n\n1 "
+      },
+      {
+        "text": "10% Cooldown",
+        "color": "#E35F12"
+      },
+      {
+        "text": " refunded\n2 "
+      },
+      {
+        "text": "20% Cooldown",
+        "color": "#E35F12"
+      },
+      {
+        "text": " refunded\n3 "
+      },
+      {
+        "text": "30% Cooldown",
+        "color": "#E35F12"
+      },
+      {
+        "text": " refunded"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Quickening",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+10% Mana Refunded",
+        "color": "#19A6E4"
+      }
+    ],
     "Lightning_Damage": [
       {
-        "text": "Increases your "
+        "text": "Increases your minimum damage when using "
       },
       {
-        "text": "minimum damage",
-        "color": "#FF00CB"
+        "text": "Lightning Abilities",
+        "color": "#FFFB81"
       },
       {
-        "text": " with a percentage when using Lightning Abilities.\n\n1: "
+        "text": ".\n\n1 "
       },
       {
         "text": "10%",
         "color": "#FF00CB"
       },
       {
-        "text": "\n2: "
+        "text": "\n2 "
       },
       {
         "text": "20%",
         "color": "#FF00CB"
       },
       {
-        "text": "\n3: "
+        "text": "\n3 "
       },
       {
         "text": "30%",
         "color": "#FF00CB"
       },
       {
-        "text": "\n4: "
+        "text": "\n4 "
       },
       {
         "text": "40%",
@@ -1492,7 +1927,7 @@
         "text": "Overlevels of the "
       },
       {
-        "text": "Lightning Mastery",
+        "text": "Lightning Finesse",
         "color": "gold"
       },
       {
@@ -1573,6 +2008,70 @@
         "color": "#4800FF"
       }
     ],
+    "Heart_Fragments": [
+      {
+        "text": "Gives a "
+      },
+      {
+        "text": "chance",
+        "color": "#FFFF55"
+      },
+      {
+        "text": " on killing a mob to spawn a "
+      },
+      {
+        "text": "Heart Fragment",
+        "color": "#22FF25"
+      },
+      {
+        "text": ", that when picked up heals you for "
+      },
+      {
+        "text": "1 hitpoint",
+        "color": "#22FF25"
+      },
+      {
+        "text": " multiplied by Healing Efficiency.\n\n1 "
+      },
+      {
+        "text": "+5%",
+        "color": "#22FF25"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "+10%",
+        "color": "#22FF25"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "+15%",
+        "color": "#22FF25"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Heart Fragments",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+3% Heart Fragment Chance",
+        "color": "#7DF587"
+      }
+    ],
     "Mana_Steal": [
       {
         "text": "Adds Mana Steal to your "
@@ -1592,21 +2091,21 @@
         "text": " on your hit.\n\n1 "
       },
       {
+        "text": "4%",
+        "color": "#0353D7"
+      },
+      {
+        "text": "\n\n2 "
+      },
+      {
+        "text": "6%",
+        "color": "#0353D7"
+      },
+      {
+        "text": "\n\n3 "
+      },
+      {
         "text": "8%",
-        "color": "#0353D7"
-      },
-      {
-        "text": "\n2 "
-      },
-      {
-        "text": "16%",
-        "color": "#0353D7"
-      },
-      {
-        "text": "\n3 "
-      },
-      {
-        "text": "24%",
         "color": "#0353D7"
       },
       {
@@ -1632,10 +2131,10 @@
     ],
     "Last_Stand": [
       {
-        "text": "Gain "
+        "text": "Take reduced "
       },
       {
-        "text": "extra resistance",
+        "text": "final damage",
         "color": "#09BFB8"
       },
       {
@@ -1646,31 +2145,10 @@
         "color": "#7DF587"
       },
       {
-        "text": " max health.\n\n1 "
+        "text": " max health. Applied after normal mitigation.\n\n1 "
       },
       {
-        "text": "+10%",
-        "color": "#09BFB8"
-      },
-      {
-        "text": "\n2 "
-      },
-      {
-        "text": "+20%",
-        "color": "#09BFB8"
-      },
-      {
-        "text": "\n3 "
-      },
-      {
-        "text": "+30%",
-        "color": "#09BFB8"
-      },
-      {
-        "text": "\n4 "
-      },
-      {
-        "text": "+40%",
+        "text": "50% reduced damage",
         "color": "#09BFB8"
       },
       {
@@ -1789,6 +2267,101 @@
         "color": "#e9c375"
       }
     ],
+    "Blood_Rush": [
+      {
+        "text": "Gain "
+      },
+      {
+        "text": "+8% Healing Efficiency",
+        "color": "#7DF587"
+      },
+      {
+        "text": " when killing a mob. This effect can "
+      },
+      {
+        "text": "stack",
+        "color": "#FFEB07"
+      },
+      {
+        "text": " and lasts for a duration of time.\n1 "
+      },
+      {
+        "text": "4 Max Stacks",
+        "color": "#FFEB07"
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "4 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": " wear-off time\n2 "
+      },
+      {
+        "text": "6 Max Stacks",
+        "color": "#FFEB07"
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "6 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": " wear-off time\n3 "
+      },
+      {
+        "text": "8 Max Stacks",
+        "color": "#FFEB07"
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "8 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": " wear-off time\n4 "
+      },
+      {
+        "text": "10 Max Stacks",
+        "color": "#FFEB07"
+      },
+      {
+        "text": ", "
+      },
+      {
+        "text": "10 seconds",
+        "color": "#7024AC"
+      },
+      {
+        "text": " wear-off time"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Blood Rush",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "adds two additional max "
+      },
+      {
+        "text": "stack",
+        "color": "#36ffa7"
+      }
+    ],
     "Arcana": [
       {
         "text": "Gain "
@@ -1893,7 +2466,7 @@
         "color": "#FFE068"
       },
       {
-        "text": " when killing a mob. This effect can "
+        "text": " when hitting a mob. This effect can "
       },
       {
         "text": "stack",
@@ -1984,50 +2557,36 @@
         "text": "Increases your "
       },
       {
-        "text": "damage",
-        "color": "#C23627"
-      },
-      {
-        "text": " by applying the "
-      },
-      {
-        "text": "Strength effect ",
-        "color": "green"
-      },
-      {
-        "text": "permanently.\n\nEvery level of the Strength effect increases your base damage by "
-      },
-      {
-        "text": "3",
+        "text": "Attack Damage",
         "color": "#C23627"
       },
       {
         "text": ".\n\n1 "
       },
       {
-        "text": "+1",
-        "color": "green"
+        "text": "+4",
+        "color": "#C23627"
       },
       {
         "text": "\n2 "
       },
       {
-        "text": "+2",
-        "color": "green"
+        "text": "+8",
+        "color": "#C23627"
       },
       {
         "text": "\n3 "
       },
       {
-        "text": "+3",
-        "color": "green"
+        "text": "+14",
+        "color": "#C23627"
       },
       {
         "text": "\n4 "
       },
       {
-        "text": "+4",
-        "color": "green"
+        "text": "+20",
+        "color": "#C23627"
       },
       {
         "text": "\n\n"
@@ -2036,7 +2595,7 @@
         "text": "Overlevels of the "
       },
       {
-        "text": "Strength",
+        "text": "Might",
         "color": "gold"
       },
       {
@@ -2050,6 +2609,63 @@
         "color": "#C23627"
       }
     ],
+    "Lingering_Fumes": [
+      {
+        "text": "Increases your "
+      },
+      {
+        "text": "Effect Duration",
+        "color": "#ADC9FF"
+      },
+      {
+        "text": ", making your buffs, debuffs and clouds last longer.\n\n1 "
+      },
+      {
+        "text": "+10%",
+        "color": "#ADC9FF"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "+20%",
+        "color": "#ADC9FF"
+      },
+      {
+        "text": "\n3 "
+      },
+      {
+        "text": "+30%",
+        "color": "#ADC9FF"
+      },
+      {
+        "text": "\n4 "
+      },
+      {
+        "text": "+40%",
+        "color": "#ADC9FF"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Lingering Fumes",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+10% Effect Duration",
+        "color": "#85edfe"
+      }
+    ],
     "Lucky_Momentum": [
       {
         "text": "Gain "
@@ -2059,7 +2675,7 @@
         "color": "#6DF5A3"
       },
       {
-        "text": " when killing a mob. This effect can "
+        "text": " when hitting a mob. This effect can "
       },
       {
         "text": "stack",
@@ -2161,21 +2777,14 @@
         "color": "#FFEB07"
       },
       {
-        "text": " of causing a "
+        "text": " to trigger a "
       },
       {
         "text": "Frost Nova",
         "color": "#23D2BB"
       },
       {
-        "text": " to be cast around the target. \nThe Frost Nova scales in "
-      },
-      {
-        "text": "level ",
-        "color": "#C1579D"
-      },
-      {
-        "text": "with this talent and does not require you to have the ability learnt.\n\n1 "
+        "text": " around the target.\n\n1 "
       },
       {
         "text": "10%",
@@ -2185,11 +2794,8 @@
         "text": " - "
       },
       {
-        "text": "Frost Nova "
-      },
-      {
-        "text": "1",
-        "color": "#C1579D"
+        "text": "Level 1 Nova",
+        "color": "#23D2BB"
       },
       {
         "text": "\n2 "
@@ -2202,11 +2808,8 @@
         "text": " - "
       },
       {
-        "text": "Frost Nova "
-      },
-      {
-        "text": "2",
-        "color": "#C1579D"
+        "text": "Level 2 Nova",
+        "color": "#23D2BB"
       },
       {
         "text": "\n3 "
@@ -2219,11 +2822,8 @@
         "text": " - "
       },
       {
-        "text": "Frost Nova "
-      },
-      {
-        "text": "3",
-        "color": "#C1579D"
+        "text": "Level 3 Nova",
+        "color": "#23D2BB"
       },
       {
         "text": "\n4 "
@@ -2236,11 +2836,8 @@
         "text": " - "
       },
       {
-        "text": "Frost Nova "
-      },
-      {
-        "text": "4",
-        "color": "#C1579D"
+        "text": "Level 4 Nova",
+        "color": "#23D2BB"
       },
       {
         "text": "\n\n"
