@@ -14,8 +14,10 @@ import net.minecraftforge.fml.ModContainer;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
+import xyz.iwolfking.woldsvaults.init.ModNetwork;
 import xyz.iwolfking.woldsvaults.integration.bettercombat.BetterCombatToggleHelper;
 import xyz.iwolfking.woldsvaults.client.init.ModKeybinds;
+import xyz.iwolfking.woldsvaults.network.message.LeaderboardRequestMessage;
 
 @Mod.EventBusSubscriber(modid = WoldsVaults.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class KeyInputEvents {
@@ -49,6 +51,12 @@ public class KeyInputEvents {
 
         if(ModKeybinds.openInventoryHUD.consumeClick()) {
             Minecraft.getInstance().setScreen(new InventoryHudEditScreen(Minecraft.getInstance().screen));
+        }
+
+        if(ModKeybinds.openLeaderboard.consumeClick()) {
+            if(Minecraft.getInstance().player != null) {
+                ModNetwork.sendToServer(new LeaderboardRequestMessage());
+            }
         }
     }
 }

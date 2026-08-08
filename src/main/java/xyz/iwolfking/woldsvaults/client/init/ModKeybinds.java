@@ -10,12 +10,16 @@ public class ModKeybinds {
     public static KeyMapping openWoldsVaultsConfig;
     public static KeyMapping toggleBetterCombat;
     public static KeyMapping openInventoryHUD;
+    public static KeyMapping openLeaderboard;
+
 
     public static void registerKeyBinds() {
         isFeatherFixed = registerKeyMapping("is_feather_fixed", -1);
         openWoldsVaultsConfig = registerKeyMapping("open_wolds_vaults_config", GLFW.GLFW_KEY_DELETE);
         toggleBetterCombat = registerKeyMapping("toggle_better_combat", GLFW.GLFW_KEY_PERIOD);
         openInventoryHUD = registerKeyMapping("open_inventory_hud", GLFW.GLFW_KEY_O);
+        openLeaderboard = registerKeyMapping("open_leaderboard", GLFW.GLFW_KEY_GRAVE_ACCENT);
+
     }
 
     private static KeyMapping registerKeyMapping(String name, int keyCode) {
