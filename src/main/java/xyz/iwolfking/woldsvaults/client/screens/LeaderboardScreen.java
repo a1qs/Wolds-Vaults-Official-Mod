@@ -23,11 +23,6 @@ public class LeaderboardScreen extends Screen {
     }
 
     @Override
-    protected void init() {
-        super.init();
-    }
-
-    @Override
     public void render(@NotNull PoseStack pPoseStack, int pMouseX, int pMouseY, float pPartialTick) {
         int renderX = (int) (this.width * 0.85);
         int renderY = (int) (this.height * 0.6);
@@ -57,8 +52,8 @@ public class LeaderboardScreen extends Screen {
         int y = startY;
         int lineSpacing = 15;
 
-        for (int placement = 1; placement <= top10.size(); placement++) {
-            Map.Entry<UUID, Integer> entry = top10.get(placement - 1);
+        for (int placement = 0; placement < top10.size(); placement++) {
+            Map.Entry<UUID, Integer> entry = top10.get(placement);
 
             String user = (entry.getKey() != null)
                     ? (entry.getKey().equals(this.minecraft.player.getUUID())
@@ -70,7 +65,7 @@ public class LeaderboardScreen extends Screen {
 
             if (user != null) {
                 // Centered leaderboard text
-                MutableComponent component = getPlacementComponent(placement, user, contribution);
+                MutableComponent component = getPlacementComponent(placement + 1, user, contribution);
                 Minecraft.getInstance().font.drawShadow(pPoseStack, component, x - this.font.width(component) / 2.0f, y, 0xFFFFFF);
                 y += lineSpacing;
             }
@@ -157,12 +152,18 @@ public class LeaderboardScreen extends Screen {
         return "Unknown"; // Fallback if no name is found
     }
 
+    private static final MutableComponent SEPERATOR = new TextComponent(" — ").withStyle(ChatFormatting.DARK_GRAY);
+    private static final MutableComponent CONTRIBUTIONS = new TextComponent(" Contributions").withStyle(ChatFormatting.GRAY);
+    private static final MutableComponent FIRST = new TextComponent("1").withStyle(Style.EMPTY.withColor(0xfcba03));
+    private static final MutableComponent SECOND = new TextComponent("2").withStyle(Style.EMPTY.withColor(0xdedede));
+    private static final MutableComponent THIRD = new TextComponent("3").withStyle(Style.EMPTY.withColor(0xCE8946));
+
     private static MutableComponent getPlacementComponent(int placement, String user, String contribution) {
         MutableComponent base = new TextComponent("#");
         MutableComponent placementComponent = switch (placement) {
-            case 1 -> base.append(ComponentUtils.wavingComponent(new TextComponent("1"),0xfcba03, 0.05F, 0.2F));
-            case 2 -> base.append(ComponentUtils.wavingComponent(new TextComponent("2"), 0xdedede,0.05F, 0.2F));
-            case 3 -> base.append(ComponentUtils.wavingComponent(new TextComponent("3"), 0xCE8946, 0.05F, 0.2F));
+            case 1 -> base.append(FIRST);
+            case 2 -> base.append(SECOND);
+            case 3 -> base.append(THIRD);
             default -> base.append(new TextComponent(String.valueOf(placement)));
         };
 
@@ -170,14 +171,15 @@ public class LeaderboardScreen extends Screen {
             case 1 -> ComponentUtils.wavingComponent(new TextComponent(user),0xfcba03, 0.1F, 0.4F);
             case 2 -> ComponentUtils.wavingComponent(new TextComponent(user), 0xdedede,0.1F, 0.4F);
             case 3 -> ComponentUtils.wavingComponent(new TextComponent(user), 0xCE8946, 0.1F, 0.4F);
-            default -> base.append(new TextComponent(user));
+            default -> new TextComponent(user).withStyle(ChatFormatting.GRAY);
         };
 
-        return placementComponent
-                .append(new TextComponent(" — ").withStyle(ChatFormatting.DARK_GRAY))
-                .append(userComponent)
-                .append(new TextComponent(" — ").withStyle(ChatFormatting.DARK_GRAY))
-                .append(new TextComponent(contribution).withStyle(ChatFormatting.YELLOW))
-                .append(new TextComponent(" Contributions").withStyle(ChatFormatting.GRAY));
+        placementComponent.append(SEPERATOR);
+        placementComponent.append(userComponent);
+        placementComponent.append(SEPERATOR);
+        placementComponent.append(new TextComponent(contribution).withStyle(ChatFormatting.YELLOW));
+        placementComponent.append(CONTRIBUTIONS);
+
+        return placementComponent;
     }
 }
