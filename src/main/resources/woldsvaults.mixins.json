@@ -105,6 +105,7 @@
     "lightmanscurrency.MixinCurioHelper",
     "lightmanscurrency.MixinWalletDisplayOverlay",
     "mekanism.MixinBaseRecipeCategory",
+    "mekanism.MixinOpenCardDeckMessage",
     "mekanism.MixinVirtualCraftingOutputSlot",
     "occultism.MixinCraftRitual",
     "occultism.MixinFamiliarEventHandler",
@@ -552,8 +553,8 @@
     "vaulthunters.fixes.MixinScavengerBingoRenderer",
     "vaulthunters.fixes.MixinSkillDialog",
     "vaulthunters.fixes.MixinTalentWidget",
-    "vaulthunters.fixes.MixinToolItemRenderer",
     "vaulthunters.fixes.MixinToolItem",
+    "vaulthunters.fixes.MixinToolItemRenderer",
     "vaulthunters.fixes.MixinUniqueCodexScreen",
     "vaulthunters.fixes.MixinVoidStoneItem",
     "vaulthunters.objectives.MixinClientCrystalData"
