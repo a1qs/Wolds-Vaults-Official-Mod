@@ -28,7 +28,7 @@ public class ModSkillDescriptionsProvider extends AbstractSkillDescriptionsProvi
         ModConfigs.COLORS = new ColorsConfig().readConfig();
 
         add("talent_overlevels", builder -> {
-            TalentDescriptionsHelper.appendOverlevelDescription("Haste", builder, "add", "+10 Mining Speed", "#47b8f5");
+            TalentDescriptionsHelper.appendOverlevelDescription("Haste", builder, "add", "+10% Mining Speed", "#47b8f5");
             TalentDescriptionsHelper.appendOverlevelDescription("Speed", builder, "add", "+10% Movement Speed", "#ffe400");
             TalentDescriptionsHelper.appendOverlevelDescription("Strength", builder, "add", "+6 Attack Damage", "#C23627");
             TalentDescriptionsHelper.appendOverlevelDescription("Intelligence", builder, "add", "+8 Ability Power", "#FF00CB");
@@ -69,6 +69,7 @@ public class ModSkillDescriptionsProvider extends AbstractSkillDescriptionsProvi
             TalentDescriptionsHelper.appendOverlevelDescription("Daze", builder, "add", "+20% Additional Damage", "#C23627");
             TalentDescriptionsHelper.appendOverlevelDescription("Voltaic_Impact", builder, "add", "+20% Additional Damage", "#C23627");
             TalentDescriptionsHelper.appendOverlevelDescription("Blight", builder, "add", "+2% Damage Reduction", "#ffd800");
+            TalentDescriptionsHelper.appendOverlevelDescription("Hunters_Instinct", builder, "add", "+0.2% Chance", "#ffd800");
         });
 
         add("wolds_talents", builder -> {

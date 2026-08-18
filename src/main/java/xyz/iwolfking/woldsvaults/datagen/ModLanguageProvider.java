@@ -486,6 +486,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("key.woldsvaults.toggle_better_combat", "Toggle Better Combat");
         add("key.woldsvaults.is_feather_fixed", "Toggle Prismatic Feather Fix");
         add("key.woldsvaults.open_leaderboard", "Open Leaderboard");
+        add("key.woldsvaults.configure_trinket", "Configure Hovered Trinket");
         add("key.category.woldsvaults", "Wold's Vaults");
         add("the_vault.gear_modification.reforge_weapon_type.description", "Reforges weapon type");
         add("the_vault.gear_modification.add_unusual_modifier.description", "Add unusual modifier");
@@ -537,6 +538,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add("entity.the_vault.golem_boss", "Golem Boss");
         add("key.the_vault.quickselect.colossus", "Select and use ability: Colossus");
         add("key.the_vault.quickselect.expunge", "Select and use ability: Diffuse");
+        add("key.the_vault.quickselect.necromancy", "Select and use ability: Necromancy");
+        add("key.the_vault.quickselect.fangs", "Select and use ability: Fangs");
         add("woldsvaults.subtitle.saferspaces_proc", "Safer Spaces activated!");
         add("the_vault.gear_modification.tab.mythical", "Mythical");
         add("item.woldsvaults.pogominium_ingot", "POG-ominium Ingot");

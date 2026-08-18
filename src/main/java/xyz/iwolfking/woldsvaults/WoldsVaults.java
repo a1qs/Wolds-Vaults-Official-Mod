@@ -44,6 +44,7 @@ import xyz.iwolfking.woldsvaults.events.*;
 import xyz.iwolfking.woldsvaults.integration.cctweaked.CCTweakedSetup;
 import xyz.iwolfking.woldsvaults.integration.mekanism.init.MekanismRecipeDeserializers;
 import xyz.iwolfking.woldsvaults.integration.mekanism.init.ModGases;
+import xyz.iwolfking.woldsvaults.integration.mekanism.init.ModModuleToVaultGearModifications;
 import xyz.iwolfking.woldsvaults.integration.mekanism.init.ModPigments;
 import xyz.iwolfking.woldsvaults.integration.vhapi.loaders.WoldDataLoaders;
 import xyz.iwolfking.woldsvaults.client.init.ModParticles;
@@ -132,6 +133,9 @@ public class WoldsVaults {
         ModVaultEvents.init();
         ModPetModels.register();
         BETTER_COMBAT_PRESENT = LoadingModList.get().getModFileById("bettercombat") != null;
+        if(ConditionalModUtils.isModPresent("mekanism")) {
+            ModModuleToVaultGearModifications.init();
+        }
     }
 
     @SubscribeEvent

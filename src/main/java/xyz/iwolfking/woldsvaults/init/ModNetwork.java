@@ -13,6 +13,7 @@ import xyz.iwolfking.woldsvaults.network.message.BrewingAltarParticleMessage;
 import xyz.iwolfking.woldsvaults.network.message.ClientboundSyncGamerulesMessage;
 import xyz.iwolfking.woldsvaults.network.message.ElixirParticleMessage;
 import xyz.iwolfking.woldsvaults.network.message.MagicMissileWarningMessage;
+import xyz.iwolfking.woldsvaults.network.packets.ServerboundSetTrinketSpeedCapPacket;
 import xyz.iwolfking.woldsvaults.network.packets.TimeTrialLeaderboardS2CPacket;
 import xyz.iwolfking.woldsvaults.network.packets.UpdateFloatingTextPacket;
 
@@ -40,6 +41,7 @@ public class ModNetwork {
         CHANNEL.registerMessage(id++, S2CSyncGlobalCap.class, S2CSyncGlobalCap::encode, S2CSyncGlobalCap::decode, S2CSyncGlobalCap::handle);
         CHANNEL.registerMessage(id++, MagicMissileWarningMessage.class, MagicMissileWarningMessage::encode, MagicMissileWarningMessage::decode, MagicMissileWarningMessage::handle);
         CHANNEL.registerMessage(id++, LuckyHitCooldownParticleMessage.class, LuckyHitCooldownParticleMessage::encode, LuckyHitCooldownParticleMessage::decode, LuckyHitCooldownParticleMessage::handle);
+        CHANNEL.registerMessage(id++, ServerboundSetTrinketSpeedCapPacket.class, ServerboundSetTrinketSpeedCapPacket::encode, ServerboundSetTrinketSpeedCapPacket::decode, ServerboundSetTrinketSpeedCapPacket::handle);
         CHANNEL.registerMessage(id++, LeaderboardDataMessage.class, LeaderboardDataMessage::encode, LeaderboardDataMessage::decode, LeaderboardDataMessage::handle);
         CHANNEL.registerMessage(id++, LeaderboardRequestMessage.class, LeaderboardRequestMessage::encode, LeaderboardRequestMessage::decode, LeaderboardRequestMessage::handle);
 

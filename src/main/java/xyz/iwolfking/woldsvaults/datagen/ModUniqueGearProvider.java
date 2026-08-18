@@ -22,7 +22,8 @@ public class ModUniqueGearProvider extends AbstractUniqueGearProvider {
                 .base("the_vault:base_durability")
                 .implicit("the_vault:trident_damage_low",
                         "the_vault:trident_loyalty_zeus",
-                        "the_vault:trident_channeling")
+                        "the_vault:trident_channeling",
+                        "the_vault:base_attack_speed_axe")
                 .prefix("the_vault:channeling_chance_zeus")
                 .prefix("the_vault:second_judgement_zeus")
                 .prefix("the_vault:windup_time_zeus")
@@ -40,7 +41,8 @@ public class ModUniqueGearProvider extends AbstractUniqueGearProvider {
                 .model("woldsvaults:gear/trident/fork")
                 .base("the_vault:base_durability")
                 .implicit("the_vault:trident_damage",
-                        "the_vault:trident_loyalty")
+                        "the_vault:trident_loyalty",
+                        "the_vault:base_attack_speed_axe")
                 .prefix("the_vault:mod_hit_hearts_fork")
                 .prefix("the_vault:mod_tank_damage_fork")
                 .prefix("the_vault:mod_soul_quantity_fork")
@@ -209,7 +211,7 @@ public class ModUniqueGearProvider extends AbstractUniqueGearProvider {
                 .model("the_vault:magnets/treasure_magnet")
                 .base("the_vault:base_magnet_durability")
                 .implicit("the_vault:u_base_magnet_range", "the_vault:base_endergized")
-                .prefix("the_vault:u_treasure_magnet_item_rarity", "the_vault:u_treasure_magnet_item_quantity", "the_vault:u_lucky_lucky")
+                .prefix("the_vault:u_treasure_magnet_item_rarity", "the_vault:u_treasure_magnet_item_quantity", "the_vault:u_lucky_lucky_tm")
                 .suffix("the_vault:u_treasure_magnet_health", "the_vault:u_treasure_magnet_mana")
                 .dropLocation("Treasure Pedestal")
                 .description("This powerful Magnet gives you much greater ", "$text")

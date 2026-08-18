@@ -716,7 +716,7 @@
         "text": "add "
       },
       {
-        "text": "+10 Mining Speed",
+        "text": "+10% Mining Speed",
         "color": "#47b8f5"
       }
     ],
@@ -1033,6 +1033,42 @@
       },
       {
         "text": "+2% Damage Reduction",
+        "color": "#ffd800"
+      }
+    ],
+    "Hunters_Instinct": [
+      {
+        "text": "Killing a mob grants a small chance of having their death cause your "
+      },
+      {
+        "text": "Hunter senses",
+        "color": "#FCF5C5"
+      },
+      {
+        "text": " to trigger, revealing all POI's in a radius around the killed mob. \n\nThis talent requires a level in "
+      },
+      {
+        "text": "Hunter",
+        "color": "#FCF5C5"
+      },
+      {
+        "text": "\n\n"
+      },
+      {
+        "text": "Overlevels of the "
+      },
+      {
+        "text": "Hunter's Instinct",
+        "color": "gold"
+      },
+      {
+        "text": " talent "
+      },
+      {
+        "text": "add "
+      },
+      {
+        "text": "+0.2% Chance",
         "color": "#ffd800"
       }
     ],
@@ -1454,6 +1490,20 @@
       },
       {
         "text": " in a 5 by 5 area around the target.\n\n1 "
+      },
+      {
+        "text": "45%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n2 "
+      },
+      {
+        "text": "60%",
+        "color": "#C23627"
+      },
+      {
+        "text": "\n3 "
       },
       {
         "text": "75%",

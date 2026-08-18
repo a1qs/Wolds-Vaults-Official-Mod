@@ -329,7 +329,7 @@ public class LivingEntityEvents {
 
     @SubscribeEvent
     public static void cleavingDamage(LivingHurtEvent event) {
-        if(event.getSource().getEntity() instanceof Player player && WoldEventHelper.isNormalAttack()) {
+        if(event.getSource().getEntity() instanceof Player player && WoldEventHelper.isNormalAttack() && !WoldActiveFlags.IS_PROC_FANG_ATTACKING.isSet()) {
             if(player.getMainHandItem().getItem() instanceof VaultAxeItem) {
                 event.setAmount(event.getAmount() + WoldsAxeSpecializationTalent.applyCleavingDamageBonus(player, event.getEntityLiving()));
             }
@@ -394,6 +394,10 @@ public class LivingEntityEvents {
             return;
         }
 
+        if(WoldActiveFlags.IS_PROC_FANG_ATTACKING.isSet()) {
+            return;
+        }
+
         if(event.getSource().isProjectile()) {
             return;
         }
@@ -426,6 +430,10 @@ public class LivingEntityEvents {
             return;
         }
 
+        if(WoldActiveFlags.IS_PROC_FANG_ATTACKING.isSet()) {
+            return;
+        }
+
         if(event.getSource().isProjectile()) {
             return;
         }
@@ -450,6 +458,10 @@ public class LivingEntityEvents {
     public static void apScalingDamage(LivingHurtEvent event) {
         //Prevent an entity from being reaved more than once or applying to non-melee strikes.
         if(!WoldEventHelper.isNormalAttack()) {
+            return;
+        }
+
+        if(WoldActiveFlags.IS_PROC_FANG_ATTACKING.isSet()) {
             return;
         }
 
@@ -507,6 +519,10 @@ public class LivingEntityEvents {
     public static void echoingHit(LivingHurtEvent event) {
 
         if(event.getSource().isProjectile()) {
+            return;
+        }
+
+        if(WoldActiveFlags.IS_PROC_FANG_ATTACKING.isSet()) {
             return;
         }
 
@@ -602,7 +618,7 @@ public class LivingEntityEvents {
 //                                WoldsVaults.LOGGER.info("[WOLD'S VAULTS] Reverberated {} damage.", oDamage);
 
                                 WoldActiveFlags.IS_AOE2_ATTACK.maybeRunWithFlag(noCleave, () ->
-                                    WoldActiveFlags.IS_UNLUCKY_ATTACK.maybeRunWithFlag(noLuck, () ->
+                                    WoldActiveFlags.IS_UNLUCKY_ATTACK.runWithFlag(() ->
                                         WoldActiveFlags.IS_ECHOING_ATTACKING.runWithFlag(() ->
                                             DamageUtil.shotgunAttack(target, e -> e.hurt(oSource, oDamage))
                                         )
@@ -703,6 +719,10 @@ public class LivingEntityEvents {
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onLivingHurt(LivingHurtEvent event) {
         if (!(event.getSource().getEntity() instanceof Player player)) {
+            return;
+        }
+
+        if (WoldActiveFlags.IS_FANG_ATTACKING.isSet()) {
             return;
         }
 
