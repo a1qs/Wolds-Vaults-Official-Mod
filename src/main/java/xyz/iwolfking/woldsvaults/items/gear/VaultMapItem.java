@@ -2,9 +2,12 @@ package xyz.iwolfking.woldsvaults.items.gear;
 
 import com.google.common.collect.Multimap;
 import iskallia.vault.VaultMod;
+import iskallia.vault.client.data.ClientGreedData;
 import iskallia.vault.config.VaultCrystalConfig;
 import iskallia.vault.core.random.JavaRandom;
 import iskallia.vault.core.vault.modifier.VaultModifierStack;
+import iskallia.vault.core.vault.modifier.modifier.DecoratorAddModifier;
+import iskallia.vault.core.vault.modifier.modifier.DecoratorCascadeModifier;
 import iskallia.vault.core.vault.modifier.modifier.GroupedModifier;
 import iskallia.vault.core.vault.modifier.registry.VaultModifierRegistry;
 import iskallia.vault.core.vault.modifier.spi.VaultModifier;
@@ -20,6 +23,8 @@ import iskallia.vault.gear.tooltip.GearTooltip;
 import iskallia.vault.init.ModConfigs;
 import iskallia.vault.item.BasicItem;
 import iskallia.vault.item.crystal.CrystalData;
+import iskallia.vault.item.crystal.VaultCrystalItem;
+import iskallia.vault.item.crystal.modifiers.CrystalModifiers;
 import iskallia.vault.item.crystal.objective.CrystalObjective;
 import iskallia.vault.item.crystal.properties.CapacityCrystalProperties;
 import iskallia.vault.item.crystal.theme.CrystalTheme;
@@ -234,6 +239,10 @@ public class VaultMapItem extends BasicItem implements VaultGearItem, IVaultCrys
 
         Player player = context.getPlayer().get();
 
+        if(player.getLevel().isClientSide() && !ClientGreedData.isCompletedHerald()) {
+            return false;
+        }
+
         if (context.getBlockState().map((state) -> state.getBlock() instanceof AnvilBlock).orElse(false)) {
             return false;
         }
@@ -244,7 +253,7 @@ public class VaultMapItem extends BasicItem implements VaultGearItem, IVaultCrys
 
         VaultGearData mapData = VaultGearData.read(ingredientStack);
 
-        int size = (mapData.getFirstValue(ModGearAttributes.MAP_TIER).orElse(1) + 1) * 10;
+        int size = getCapacityConsumption(ingredientStack);
 
         if (data.getProperties() instanceof CapacityCrystalProperties properties) {
             Integer capacity = properties.getCapacity().orElse(null);
@@ -322,6 +331,27 @@ public class VaultMapItem extends BasicItem implements VaultGearItem, IVaultCrys
         return true;
     }
 
+    @Override
+    public int getCapacityConsumption(ItemStack stack) {
+        if(stack.getItem() instanceof VaultMapItem) {
+            VaultGearData data = VaultGearData.read(stack);
+            return (data.getFirstValue(ModGearAttributes.MAP_TIER).orElse(0) + 1) * 10;
+        }
+
+        return 0;
+    }
+
+    @Override
+    public boolean hasApplied(ItemStack crystalStack) {
+        if(crystalStack.getItem() instanceof VaultCrystalItem) {
+            CrystalData crystalData = CrystalData.read(crystalStack);
+            CrystalModifiers modifiers = crystalData.getModifiers();
+            return modifiers.getList().stream().anyMatch(stack -> stack.getModifier() instanceof SettableValueVaultModifier<?>);
+        }
+
+        return false;
+    }
+
     public static boolean applySpecialModifiers(CrystalData data, VaultGearData mapData, VaultGearModifier.AffixType affixType, AnvilContext context, ItemStack output, boolean shouldReduceValues) {
         for (VaultGearModifier<?> mod : mapData.getModifiers(affixType)) {
             if (data.getObjective() instanceof HyperVaultCrystalObjective
@@ -353,7 +383,21 @@ public class VaultMapItem extends BasicItem implements VaultGearItem, IVaultCrys
                     }
                 }
 
-            } else if (vaultMod != null) {
+            }
+            else if(!mod.getAttribute().equals(ModGearAttributes.STATIC_PLACEHOLDER_MODIFIER) && vaultMod != null) {
+                VaultModifierStack stack = null;
+                if(vaultMod instanceof DecoratorAddModifier || mod.getValue() instanceof Integer) {
+                    stack = new VaultModifierStack(vaultMod, (Integer) mod.getValue());
+                }
+                else if(mod.getValue() instanceof Float floatValue) {
+                  stack = new VaultModifierStack(vaultMod, (int)(floatValue * 100));
+                }
+
+                if(stack != null && data.addModifierByCrafting(stack, true, true)) {
+                    data.addModifierByCrafting(stack, true, false);
+                }
+            }
+            else if (mod.getAttribute().equals(ModGearAttributes.STATIC_PLACEHOLDER_MODIFIER) && vaultMod != null) {
                 VaultModifierStack stack = new VaultModifierStack(vaultMod, 1);
                 if(data.addModifierByCrafting(stack, true, true)) {
                     data.addModifierByCrafting(stack, true, false);
