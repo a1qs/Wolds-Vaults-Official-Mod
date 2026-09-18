@@ -6,10 +6,9 @@ import iskallia.vault.client.data.ClientGreedData;
 import iskallia.vault.config.VaultCrystalConfig;
 import iskallia.vault.core.random.JavaRandom;
 import iskallia.vault.core.vault.modifier.VaultModifierStack;
-import iskallia.vault.core.vault.modifier.modifier.DecoratorAddModifier;
-import iskallia.vault.core.vault.modifier.modifier.DecoratorCascadeModifier;
-import iskallia.vault.core.vault.modifier.modifier.GroupedModifier;
+import iskallia.vault.core.vault.modifier.modifier.*;
 import iskallia.vault.core.vault.modifier.registry.VaultModifierRegistry;
+import iskallia.vault.core.vault.modifier.spi.EntityAttributeModifier;
 import iskallia.vault.core.vault.modifier.spi.VaultModifier;
 import iskallia.vault.gear.VaultGearClassification;
 import iskallia.vault.gear.VaultGearHelper;
@@ -61,6 +60,7 @@ import xyz.iwolfking.woldsvaults.WoldsVaults;
 import xyz.iwolfking.woldsvaults.api.util.ducks.DuckMapTier;
 import xyz.iwolfking.woldsvaults.init.ModGearAttributes;
 import xyz.iwolfking.woldsvaults.objectives.HyperVaultCrystalObjective;
+import xyz.iwolfking.woldsvaults.objectives.hyper.HyperModifierPolicy;
 import xyz.iwolfking.woldsvaults.items.lib.IVaultCrystalModifier;
 import xyz.iwolfking.woldsvaults.modifiers.vault.lib.SettableValueVaultModifier;
 import xyz.iwolfking.woldsvaults.modifiers.vault.map.modifiers.GreedyVaultModifier;
@@ -359,6 +359,11 @@ public class VaultMapItem extends BasicItem implements VaultGearItem, IVaultCrys
                 WoldsVaults.LOGGER.info("Stripped the Cull map modifier from a Hyper crystal.");
                 continue;
             }
+            if (data.getObjective() instanceof HyperVaultCrystalObjective
+                    && HyperModifierPolicy.isBannedCastOnKill(mod.getModifierIdentifier())) {
+                WoldsVaults.LOGGER.info("Stripped the {} map modifier from a Hyper crystal - cast-on-kill effects are banned in Hyper.", mod.getModifierIdentifier());
+                continue;
+            }
             VaultModifier<?> vaultMod = VaultModifierRegistry.get(mod.getModifierIdentifier());
             if (vaultMod instanceof SettableValueVaultModifier<?> settableValueVaultModifier) {
                 float value;
@@ -390,7 +395,12 @@ public class VaultMapItem extends BasicItem implements VaultGearItem, IVaultCrys
                     stack = new VaultModifierStack(vaultMod, (Integer) mod.getValue());
                 }
                 else if(mod.getValue() instanceof Float floatValue) {
-                  stack = new VaultModifierStack(vaultMod, (int)(floatValue * 100));
+                    if(vaultMod instanceof PlayerAttributeModifier playerStatModifier && playerStatModifier.properties().getType().equals(PlayerAttributeModifier.ModifierType.MAX_HEALTH_ADDITIVE)) {
+                        stack = new VaultModifierStack(vaultMod, floatValue.intValue());
+                    }
+                    else {
+                        stack = new VaultModifierStack(vaultMod, (int)(floatValue * 100));
+                    }
                 }
 
                 if(stack != null && data.addModifierByCrafting(stack, true, true)) {

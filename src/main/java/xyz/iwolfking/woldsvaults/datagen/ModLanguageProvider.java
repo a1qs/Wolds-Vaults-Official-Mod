@@ -63,6 +63,7 @@ public class ModLanguageProvider extends LanguageProvider {
     public void ritual(Item dummyItem, String ritualTooltip, ResourceLocation ritualId, String ritualName) {
         add("ritual." + ritualId.getNamespace() + "." + ritualId.getPath() + ".started", ritualName + " initiated!");
         add("ritual." + ritualId.getNamespace() + "." + ritualId.getPath() + ".finished", ritualName + " completed!");
+        add("ritual." + ritualId.getNamespace() + "." + ritualId.getPath() + ".interrupted", ritualName + " interrupted!");
         add(dummyItem, "Ritual: " + ritualName);
         add("item." + dummyItem.getRegistryName().getNamespace() + ".ritual_dummy." + dummyItem.getRegistryName().getPath().replace("ritual_dummy/", "") + ".tooltip", ritualTooltip);
     }
@@ -87,6 +88,7 @@ public class ModLanguageProvider extends LanguageProvider {
             if(productEntry.getItem() instanceof SpawnEggItem spawnEggItem && spawnEggItem != Items.PIG_SPAWN_EGG) {
                 add("ritual." + WoldsVaults.MOD_ID + "." + "infuse_" + spawnEggItem.getType(productEntry.getNBT()).getRegistryName().getPath() + "_spawn_egg" + ".started", "Imbue Spawn Egg" + " initiated!");
                 add("ritual." + WoldsVaults.MOD_ID + "." + "infuse_" + spawnEggItem.getType(productEntry.getNBT()).getRegistryName().getPath() + "_spawn_egg" + ".finished", "Imbue Spawn Egg" + " completed!");
+                add("ritual." + WoldsVaults.MOD_ID + "." + "infuse_" + spawnEggItem.getType(productEntry.getNBT()).getRegistryName().getPath() + "_spawn_egg.interrupted", "Imbue Spawn Egg interrupted!");
             }
         });
 
@@ -102,6 +104,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(new AlchemyItemAttribute(false), "is an Alchemy ingredient", "is not an Alchemy ingredient");
         add(new CatalystItemAttribute(false), "is an Alchemy catalyst", "is not an Alchemy catalyst");
         add(new AlchemyIngredientTypeAttribute(""), "is an Alchemy ingredient of type \"%1$s\"", "is not an Alchemy ingredient of type \"%1$s\"");
+        add("gui.woldsvaults.jei.mekanism_modification_station", "Modification Station");
         add(ModBlocks.DECO_IDONA_ALTAR_BLOCK, "God Altar (Idona - Decorative)");
         add(ModBlocks.DECO_VELARA_ALTAR_BLOCK, "God Altar (Velara - Decorative)");
         add(ModBlocks.DECO_WENDARR_ALTAR_BLOCK, "God Altar (Wendarr - Decorative)");
@@ -142,8 +145,12 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModPigments.CARD_PAINT_GREEN.getTranslationKey(), "Green Card Paint");
         add(ModPigments.CARD_PAINT_RED.getTranslationKey(), "Red Card Paint");
         add(ModPigments.CARD_PAINT_YELLOW.getTranslationKey(), "Yellow Card Paint");
+        add(ModPigments.VOID_PIGMENT.getTranslationKey(), "Void Coating");
         add(ModGases.LEAD_GAS.getTranslationKey(), "Gaseous Lead");
         add(ModItems.LEAD_DYE_BASE, "Lead Dye Base");
+        add(ModItems.CONCENTRATED_VOID, "Concentrated Void");
+        add(ModItems.INFUSED_AUGMENT, "Infused Augment");
+        add("message.woldsvaults.theme_infusion_message", "This vault is overflowing with powerful energy!");
         add("fix.woldsvaults.schematic_terminal_no_permission", "You do not have permission to place an Overworld Inscription here!");
         add("fluid.woldsvaults.molten_trinket", "Molten Trinket");
         add("block.woldsvaults.prismatic_glue", "Prismatic Glue");
@@ -153,7 +160,14 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModEffects.BURN, "Burning");
         add(ModEffects.BLITZ, "Blitz");
         add(ModEffects.ARMORED, "Armored");
+        add(ModEffects.SHREDDED, "Shredded");
         add(ModEffects.STEADFAST, "Steadfast");
+        add(ModEffects.BLOOD_CHAKRA, "Blood Chakra");
+        add(ModEffects.MOMENTUM_ENGINE, "Momentum Engine");
+        add(ModEffects.BLEED_OVERRIDE, "Bleed");
+        add(ModEffects.ULTIMATE_SHIELD, "Ultimate Shield");
+        add(iskallia.vault.init.ModEffects.TREASURE_SEEKER, "Treasure Seeker");
+        add(iskallia.vault.init.ModEffects.BOUNTIFUL_HARVEST, "Bountiful Harvest");
         add("message.woldsvaults.filled_bottle_alchemy_archive", "You have all effects unlocked! Your %1$s has been refilled!");
         add("command.woldsvaults.prevent_back_into_vault", "You cannot return into The Vault!");
         add("woldsvaults.special.fruit_rotting", "§4You feel the Vault start to rot away...");
@@ -507,6 +521,9 @@ public class ModLanguageProvider extends LanguageProvider {
         add("the_vault.gear_modification.freeze_all.description", "Freezes a legendary, corrupted, greater, or unusual modifier");
         add("the_vault.gear_modification.freeze_all.no_modifiers", "There are no modifiers to freeze");
         add("the_vault.gear_modification.freeze_all.frozen", "There is already a frozen modifier");
+        add("the_vault.gear_modification.reforge_map_tier.no_modifiers", "There is no Map Tier to increase");
+        add("the_vault.gear_modification.reforge_map_tier.max_map_tier", "Map has the max tier");
+        add("the_vault.gear_modification.reforge_map_tier.description", "Increases tier of Vault Map");
         add("item.the_vault.companion", "Companion");
         add(new VaultDollCompletedAttribute(true), "is a completed Vault Doll", "is not a completed Vault Doll");
         add("create.item_attributes.has_unusual", "has an unusual modifier");
@@ -550,6 +567,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("key.the_vault.quickselect.expunge", "Select and use ability: Diffuse");
         add("key.the_vault.quickselect.necromancy", "Select and use ability: Necromancy");
         add("key.the_vault.quickselect.fangs", "Select and use ability: Fangs");
+        add("key.the_vault.quickselect.ultimate_shield", "Select and use ability: Ultimate Shield");
         add("woldsvaults.subtitle.saferspaces_proc", "Safer Spaces activated!");
         add("the_vault.gear_modification.tab.mythical", "Mythical");
         add("item.woldsvaults.pogominium_ingot", "POG-ominium Ingot");
@@ -565,6 +583,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add("item.woldsvaults.soul_ichor", "Soul Ichor");
         add("item.woldsvaults.blazing_focus", "Blazing Focus");
         add("item.woldsvaults.suspension_focus", "Suspension Focus");
+        add(ModItems.INSCRIBING_FOCUS, "Inscribing Focus");
         add("block.woldsvaults.etching_shop_pedestal", "Etching Vendor Pedestal");
         add("block.woldsvaults.blacksmith_shop_pedestal", "Blacksmith Vendor Pedestal");
         add("block.woldsvaults.god_shop_pedestal", "God Vendor Pedestal");

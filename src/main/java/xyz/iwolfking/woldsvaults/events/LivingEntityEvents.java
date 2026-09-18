@@ -54,6 +54,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.EntityDamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -87,8 +88,10 @@ import xyz.iwolfking.woldsvaults.items.gear.VaultLootSackItem;
 import xyz.iwolfking.woldsvaults.items.gear.VaultPlushieItem;
 import xyz.iwolfking.woldsvaults.items.gear.VaultTridentItem;
 import xyz.iwolfking.woldsvaults.objectives.data.bosses.WoldBoss;
+import xyz.iwolfking.woldsvaults.talent.special.DebuffDamageBonusTalent;
 import xyz.iwolfking.woldsvaults.talent.special.WoldsAxeSpecializationTalent;
 
+import java.util.Optional;
 import java.util.Random;
 import java.util.function.BiConsumer;
 
@@ -420,6 +423,29 @@ public class LivingEntityEvents {
                     event.setAmount(hyperFinite(event.getEntityLiving(), event.getAmount() + ((event.getEntityLiving().getMaxHealth() - event.getEntityLiving().getHealth()) * executionDamage), event.getAmount(), "execution"));
                 }
             }
+        }
+    }
+
+    @SubscribeEvent
+    public static void bonusDebuffDamage(LivingHurtEvent event) {
+        if(event.getSource().getEntity() instanceof ServerPlayer player) {
+            if(ActiveFlags.IS_AP_ATTACKING.isSet()) {
+                if(event.getEntity() instanceof LivingEntity livingEntity) {
+                    if(!MobEffectHelper.hasNegativeEffect(livingEntity)) {
+                        return;
+                    }
+
+                    Optional<DebuffDamageBonusTalent> debuffDamageTalent = TalentHelper.getTalent(player, DebuffDamageBonusTalent.class);
+                    debuffDamageTalent.ifPresent(debuffDamageBonusTalent -> event.setAmount(event.getAmount() * (1.0F + debuffDamageBonusTalent.getDamageIncrease())));
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLivingKnockBack(LivingKnockBackEvent event) {
+        if(WoldActiveFlags.IS_NO_KNOCKBACK_DAMAGE.isSet()) {
+            event.setCanceled(true);
         }
     }
 

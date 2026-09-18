@@ -202,6 +202,6 @@ public class WoldsVaults {
     }
 
     public static String sId(String name) {
-        return "woldsvaults:" + name;
+        return WoldsVaults.MOD_ID + ":" + name;
     }
 }

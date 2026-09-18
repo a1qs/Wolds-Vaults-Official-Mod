@@ -1,6 +1,7 @@
 package xyz.iwolfking.woldsvaults.mixins.vaulthunters.custom;
 
 import iskallia.vault.VaultMod;
+import iskallia.vault.config.VaultGeneralConfig;
 import iskallia.vault.core.Version;
 import iskallia.vault.core.event.CommonEvents;
 import iskallia.vault.core.event.common.CrateAwardEvent;
@@ -43,9 +44,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import xyz.iwolfking.woldsvaults.WoldsVaults;
 import xyz.iwolfking.woldsvaults.api.lib.IRottenFruit;
+import xyz.iwolfking.woldsvaults.api.util.GameruleHelper;
 import xyz.iwolfking.woldsvaults.api.util.LuckHelper;
 import xyz.iwolfking.woldsvaults.api.util.WoldVaultUtils;
 import xyz.iwolfking.woldsvaults.init.ModConfigs;
+import xyz.iwolfking.woldsvaults.init.ModGameRules;
 import xyz.iwolfking.woldsvaults.items.alchemy.AlchemyIngredientItem;
 import xyz.iwolfking.woldsvaults.items.alchemy.CatalystItem;
 import xyz.iwolfking.woldsvaults.mixins.vaulthunters.accessors.CrateLootGeneratorAccessor;
@@ -75,11 +78,6 @@ public abstract class MixinRunner extends Listener {
         });
     }
 
-    /**
-     * CRATE_AWARD_EVENT is a server-global bus invoked twice (PRE/POST) for every crate awarded
-     * in ANY vault; without this guard each live Runner's handlers would inject a full roll
-     * into every crate on the server.
-     */
     @Unique
     private boolean isNotOwnCratePreAward(CrateAwardEvent.Data event) {
         return event.getPhase() != CrateAwardEvent.Phase.PRE
@@ -87,13 +85,6 @@ public abstract class MixinRunner extends Listener {
                 || !Objects.equals(event.getListener().get(Listener.ID), this.get(Listener.ID));
     }
 
-    /**
-     * The greed-tree crate bonus. In hyper vaults it rolls two passes: coins come from the
-     * unscaled base roll (their growth is the greedy-crate-tier multiplier), while non-coin
-     * greed items are re-rolled at the crate's accumulated quantity times the configured
-     * efficiency, so platinum/boxes/foci grow with deep runs the way one crate per vault
-     * never lets them.
-     */
     @Inject(method = "initServer", at = @At("TAIL"))
     private void addGreedCoinsToCrate(VirtualWorld world, Vault vault, CallbackInfo ci) {
         CommonEvents.CRATE_AWARD_EVENT.register(this, event -> {
@@ -154,10 +145,6 @@ public abstract class MixinRunner extends Listener {
         });
     }
 
-    /**
-     * Injects the score-gated hyper crate rewards. Failures are caught and logged because the
-     * VH event bus swallows handler exceptions silently.
-     */
     @Inject(method = "initServer", at = @At("TAIL"))
     private void addHyperScoreRewardsToCrate(VirtualWorld world, Vault vault, CallbackInfo ci) {
         CommonEvents.CRATE_AWARD_EVENT.register(this, event -> {
@@ -175,6 +162,11 @@ public abstract class MixinRunner extends Listener {
                 WoldsVaults.LOGGER.error("Hyper score-tier crate injection failed!", e);
             }
         });
+    }
+
+    @Inject(method = "initServer", at = @At("TAIL"))
+    private void addThemeModifiers(VirtualWorld world, Vault vault, CallbackInfo ci) {
+
     }
 
     @Inject(method = "lambda$initServer$3", at = @At("TAIL"))
@@ -220,6 +212,10 @@ public abstract class MixinRunner extends Listener {
                     }
                 }
             }
+
+            if(GameruleHelper.isEnabled(ModGameRules.ENABLE_ALL_ITEMS_IN_VAULTS, world)) {
+                ci.cancel();
+            }
         }
     }
 
@@ -234,6 +230,10 @@ public abstract class MixinRunner extends Listener {
                         ci.cancel();
                     }
                 }
+            }
+
+            if(GameruleHelper.isEnabled(ModGameRules.ENABLE_ALL_ITEMS_IN_VAULTS, world)) {
+                ci.cancel();
             }
         }
     }
