@@ -2,6 +2,8 @@ package xyz.iwolfking.woldsvaults.mixins.vaulthunters.custom;
 
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.ftb.mods.ftbquests.quest.ServerQuestFile;
+import dev.ftb.mods.ftbquests.quest.TeamData;
 import iskallia.vault.config.VaultLevelsConfig;
 import iskallia.vault.init.ModConfigs;
 import iskallia.vault.skill.PlayerVaultStats;
@@ -13,6 +15,8 @@ import iskallia.vault.world.data.PlayerVaultStatsData;
 import iskallia.vault.world.data.PlayerGreedTreeData;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Player;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
@@ -28,6 +32,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.List;
 import java.util.UUID;
 
 @Mixin(value = PlayerVaultStats.class, remap = false)
